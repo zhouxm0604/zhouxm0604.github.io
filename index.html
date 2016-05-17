@@ -67,7 +67,7 @@
     <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/05/17/hello-world/" class="article-date">
-  <time datetime="2016-05-17T11:13:49.011Z" itemprop="datePublished">2016-05-17</time>
+  <time datetime="2016-05-17T11:15:37.077Z" itemprop="datePublished">2016-05-17</time>
 </a>
     
   </div>
@@ -99,102 +99,9 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/17/hello-world/" data-id="ciobcd7830003qcg9j3cgpd51" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/17/hello-world/" data-id="ciobcfily0000ogg9o879ddrg" class="article-share-link">Share</a>
       
       
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Mysql查询用逗号分隔的字段-字符串函数FIND-IN-SET" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/05/17/Mysql查询用逗号分隔的字段-字符串函数FIND-IN-SET/" class="article-date">
-  <time datetime="2016-05-17T09:46:19.000Z" itemprop="datePublished">2016-05-17</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/17/Mysql查询用逗号分隔的字段-字符串函数FIND-IN-SET/">Mysql查询用逗号分隔的字段-字符串函数FIND_IN_SET()</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <pre><code>  查询数据库表中某个字段（值分行显示），可以用函数in()。
-
-  今天工作中遇到一个问题，就是用FIND_IN_SET()函数解决的。
-
-
-
-  第一部分：
-
-  FIND_IN_SET()函数用法，
-
-  查询用逗号分隔的字段，
-
-
-
-  表A中 go_value字段的值是以逗号分割，
-
-  查询 go_value字段中含有3的行：
-
-  select * from A where find_in_set(&apos;3&apos;, go_value);
-
-
-
- 第二部分：
-
- in()函数用法
-
- 查询数据库表中某个字段（值分行显示），
-
-
-
-表B中 prov字段的值是分行显示，
-
-查询 湖北省，天津市的gid数目
-
-select count(distinct(gid)) from B where prov in (&quot;湖北省&quot;,&quot;天津市&quot;);
-
-
-
-第三部分：
-
-查询在湖北省，天津市的gid，但这些gid不在A表中的id为1的go_value字段里（这种情况，特别是当A表中id为1的go_value中值非常多，或者需要多个go_value值时，非常适用）
-
-select b.gid from (SELECT gid FROM B where prov IN (&quot;湖北省&quot;,&quot;天津市&quot;) ) b left outer join
-(select go_value as gid FROM A WHERE id=&apos;1&apos;) a on FIND_IN_SET(b.gid,a.gid) where a.gid is null;
-
-
-第四部分：
-
-补充说明：
-
-只显示左连接查询不到的值，即显示A表存在，但B表不存在的值：   
-
-select A.no,A.name,B.score from A left join B on A.no=B.no
-
-where b.score is null;
-</code></pre>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/17/Mysql查询用逗号分隔的字段-字符串函数FIND-IN-SET/" data-id="ciobcd77x0000qcg9oc0p4eby" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/FIND-IN-SET-in/">FIND_IN_SET(),in()</a></li></ul>
-
     </footer>
   </div>
   
@@ -211,23 +118,9 @@ where b.score is null;
 
   
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/FIND-IN-SET-in/">FIND_IN_SET(),in()</a></li></ul>
-    </div>
-  </div>
-
 
   
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/FIND-IN-SET-in/" style="font-size: 10px;">FIND_IN_SET(),in()</a>
-    </div>
-  </div>
-
   
     
   <div class="widget-wrap">
@@ -247,10 +140,6 @@ where b.score is null;
         
           <li>
             <a href="/2016/05/17/hello-world/">Hello World</a>
-          </li>
-        
-          <li>
-            <a href="/2016/05/17/Mysql查询用逗号分隔的字段-字符串函数FIND-IN-SET/">Mysql查询用逗号分隔的字段-字符串函数FIND_IN_SET()</a>
           </li>
         
       </ul>
