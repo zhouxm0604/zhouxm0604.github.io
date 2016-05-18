@@ -13,68 +13,59 @@
     
     <meta name="description" content="查询数据库表中某个字段（值分行显示），可以用函数in()。
 
-  今天工作中遇到一个问题，就是用FIND_IN_SET()函数解决的。
+今天工作中遇到一个问题，就是用FIND_IN_SET()函数解决的。
 
 
 
-  第一部分：
+第一部分：
 
-  FIND_IN_SET()函数用法，
+FIND_IN_SET()函数用法，
 
-  查询用逗号分隔的字段，
+查询用逗号分隔的字段，
+![](http://http://o7csdsgs6.bkt.clouddn.com/201605181.png)     
 
+表A中 go_value字段的值是以逗号分割，
 
-
-  表A中 go_value字段的值是以逗号分割，
-
-  查询 go_value字段中含有3的行：
-
-  select * from A where find">
+查询">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Mysql查询用逗号分隔的字段-字符串函数FIND_IN_SET()">
 <meta property="og:url" content="http://yoursite.com/2016/05/17/Mysql查询用逗号分隔的字段-字符串函数FIND-IN-SET/index.html">
 <meta property="og:site_name" content="小梦的博客">
 <meta property="og:description" content="查询数据库表中某个字段（值分行显示），可以用函数in()。
 
-  今天工作中遇到一个问题，就是用FIND_IN_SET()函数解决的。
+今天工作中遇到一个问题，就是用FIND_IN_SET()函数解决的。
 
 
 
-  第一部分：
+第一部分：
 
-  FIND_IN_SET()函数用法，
+FIND_IN_SET()函数用法，
 
-  查询用逗号分隔的字段，
+查询用逗号分隔的字段，
+![](http://http://o7csdsgs6.bkt.clouddn.com/201605181.png)     
 
+表A中 go_value字段的值是以逗号分割，
 
-
-  表A中 go_value字段的值是以逗号分割，
-
-  查询 go_value字段中含有3的行：
-
-  select * from A where find">
-<meta property="og:updated_time" content="2016-05-17T09:50:56.000Z">
+查询">
+<meta property="og:updated_time" content="2016-05-18T03:46:05.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mysql查询用逗号分隔的字段-字符串函数FIND_IN_SET()">
 <meta name="twitter:description" content="查询数据库表中某个字段（值分行显示），可以用函数in()。
 
-  今天工作中遇到一个问题，就是用FIND_IN_SET()函数解决的。
+今天工作中遇到一个问题，就是用FIND_IN_SET()函数解决的。
 
 
 
-  第一部分：
+第一部分：
 
-  FIND_IN_SET()函数用法，
+FIND_IN_SET()函数用法，
 
-  查询用逗号分隔的字段，
+查询用逗号分隔的字段，
+![](http://http://o7csdsgs6.bkt.clouddn.com/201605181.png)     
 
+表A中 go_value字段的值是以逗号分割，
 
-
-  表A中 go_value字段的值是以逗号分割，
-
-  查询 go_value字段中含有3的行：
-
-  select * from A where find">
+查询">
 
     
     <link rel="alternative" href="atom.xml" title="小梦的博客" type="application/atom+xml">
@@ -154,35 +145,33 @@
 		
 		</div>
 		
-		<pre><code>  查询数据库表中某个字段（值分行显示），可以用函数in()。
+		<pre><code>查询数据库表中某个字段（值分行显示），可以用函数in()。
 
-  今天工作中遇到一个问题，就是用FIND_IN_SET()函数解决的。
-
-
-
-  第一部分：
-
-  FIND_IN_SET()函数用法，
-
-  查询用逗号分隔的字段，
+今天工作中遇到一个问题，就是用FIND_IN_SET()函数解决的。
 
 
 
-  表A中 go_value字段的值是以逗号分割，
+第一部分：
 
-  查询 go_value字段中含有3的行：
+FIND_IN_SET()函数用法，
 
-  select * from A where find_in_set(&apos;3&apos;, go_value);
+查询用逗号分隔的字段，
+![](http://http://o7csdsgs6.bkt.clouddn.com/201605181.png)     
+
+表A中 go_value字段的值是以逗号分割，
+
+查询 go_value字段中含有3的行：
+
+select * from A where find_in_set(&apos;3&apos;, go_value);
 
 
 
- 第二部分：
+第二部分：
 
- in()函数用法
+in()函数用法
 
- 查询数据库表中某个字段（值分行显示），
-
-
+查询数据库表中某个字段（值分行显示），
+http://o7csdsgs6.bkt.clouddn.com/201605182.png   
 
 表B中 prov字段的值是分行显示，
 
@@ -194,7 +183,8 @@ select count(distinct(gid)) from B where prov in (&quot;湖北省&quot;,&quot;�
 
 第三部分：
 
-查询在湖北省，天津市的gid，但这些gid不在A表中的id为1的go_value字段里（这种情况，特别是当A表中id为1的go_value中值非常多，或者需要多个go_value值时，非常适用）
+查询在湖北省，天津市的gid，但这些gid不在A表中的id为1的go_value字段里（这种情况，特别是当A表中id为1的go_value中
+值非常多，或者需要多个go_value值时，非常适用）
 
 select b.gid from (SELECT gid FROM B where prov IN (&quot;湖北省&quot;,&quot;天津市&quot;) ) b left outer join
 (select go_value as gid FROM A WHERE id=&apos;1&apos;) a on FIND_IN_SET(b.gid,a.gid) where a.gid is null;
