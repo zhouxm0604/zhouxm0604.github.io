@@ -4,41 +4,60 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>Mysql查询用逗号分隔的字段-字符串函数FIND_IN_SET() | 小梦的博客</title>
+    <title>安全测试-使用IBM Security AppScan Standard扫描及结果分析 | 小梦的博客</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Amiee Zhou">
     
 
     
-    <meta name="description" content="查询数据库表中某个字段（值分行显示），可以用函数in()。今天工作中遇到一个问题，就是用FIND_IN_SET()函数解决的。
-第一部分：
-FIND_IN_SET()函数用法，
-查询用逗号分隔的字段，
-表A中 go_value字段的值是以逗号分割，查询 go_value字段中含有3的行：
-1select * from A where find_in_set(&amp;apos;3&amp;apos;, go_va">
+    <meta name="description" content="最近测试支付系统，做了安全测试，使用IBM Security AppScan Standard扫描，并对结果进行分析。
+第一部分:扫描步骤
+第二部分：扫描结果
+对网站进行扫描后，查看问题，可以看到扫描出来的漏洞，其中，XSS漏洞需要重点被关注，XSS漏洞存在被钓鱼的风险。
+
+跨站点脚本编制：
+
+
+点击“在浏览器中显示”按钮，查看链接并在自己浏览器中显示
+http://testbilling.stn">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Mysql查询用逗号分隔的字段-字符串函数FIND_IN_SET()">
-<meta property="og:url" content="http://yoursite.com/2016/05/18/Mysql查询用逗号分隔的字段-字符串函数FIND-IN-SET/index.html">
+<meta property="og:title" content="安全测试-使用IBM Security AppScan Standard扫描及结果分析">
+<meta property="og:url" content="http://yoursite.com/2016/10/27/安全测试-使用IBM-Security扫描及结果分析/index.html">
 <meta property="og:site_name" content="小梦的博客">
-<meta property="og:description" content="查询数据库表中某个字段（值分行显示），可以用函数in()。今天工作中遇到一个问题，就是用FIND_IN_SET()函数解决的。
-第一部分：
-FIND_IN_SET()函数用法，
-查询用逗号分隔的字段，
-表A中 go_value字段的值是以逗号分割，查询 go_value字段中含有3的行：
-1select * from A where find_in_set(&amp;apos;3&amp;apos;, go_va">
-<meta property="og:image" content="http://i.imgur.com/ipNzn2N.png">
-<meta property="og:image" content="http://i.imgur.com/Bd9EmEG.png">
-<meta property="og:updated_time" content="2016-05-18T06:42:14.000Z">
+<meta property="og:description" content="最近测试支付系统，做了安全测试，使用IBM Security AppScan Standard扫描，并对结果进行分析。
+第一部分:扫描步骤
+第二部分：扫描结果
+对网站进行扫描后，查看问题，可以看到扫描出来的漏洞，其中，XSS漏洞需要重点被关注，XSS漏洞存在被钓鱼的风险。
+
+跨站点脚本编制：
+
+
+点击“在浏览器中显示”按钮，查看链接并在自己浏览器中显示
+http://testbilling.stn">
+<meta property="og:image" content="http://i.imgur.com/wCsmLcs.png">
+<meta property="og:image" content="http://i.imgur.com/fdO6jqk.png">
+<meta property="og:image" content="http://i.imgur.com/JagloVM.jpg">
+<meta property="og:image" content="http://i.imgur.com/HgDxwlA.png">
+<meta property="og:image" content="http://i.imgur.com/Fj7mnVl.jpg">
+<meta property="og:image" content="http://i.imgur.com/65vwQzi.png">
+<meta property="og:image" content="http://i.imgur.com/tbCDoHe.png">
+<meta property="og:image" content="http://i.imgur.com/ozMvKZC.jpg">
+<meta property="og:image" content="http://i.imgur.com/kqxhmiG.jpg">
+<meta property="og:updated_time" content="2016-10-27T11:04:15.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Mysql查询用逗号分隔的字段-字符串函数FIND_IN_SET()">
-<meta name="twitter:description" content="查询数据库表中某个字段（值分行显示），可以用函数in()。今天工作中遇到一个问题，就是用FIND_IN_SET()函数解决的。
-第一部分：
-FIND_IN_SET()函数用法，
-查询用逗号分隔的字段，
-表A中 go_value字段的值是以逗号分割，查询 go_value字段中含有3的行：
-1select * from A where find_in_set(&amp;apos;3&amp;apos;, go_va">
-<meta name="twitter:image" content="http://i.imgur.com/ipNzn2N.png">
+<meta name="twitter:title" content="安全测试-使用IBM Security AppScan Standard扫描及结果分析">
+<meta name="twitter:description" content="最近测试支付系统，做了安全测试，使用IBM Security AppScan Standard扫描，并对结果进行分析。
+第一部分:扫描步骤
+第二部分：扫描结果
+对网站进行扫描后，查看问题，可以看到扫描出来的漏洞，其中，XSS漏洞需要重点被关注，XSS漏洞存在被钓鱼的风险。
+
+跨站点脚本编制：
+
+
+点击“在浏览器中显示”按钮，查看链接并在自己浏览器中显示
+http://testbilling.stn">
+<meta name="twitter:image" content="http://i.imgur.com/wCsmLcs.png">
 
     
     <link rel="alternative" href="atom.xml" title="小梦的博客" type="application/atom+xml">
@@ -98,14 +117,14 @@ FIND_IN_SET()函数用法，
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2016/05/18/Mysql查询用逗号分隔的字段-字符串函数FIND-IN-SET/" title="Mysql查询用逗号分隔的字段-字符串函数FIND_IN_SET()" itemprop="url">Mysql查询用逗号分隔的字段-字符串函数FIND_IN_SET()</a>
+      <a href="/2016/10/27/安全测试-使用IBM-Security扫描及结果分析/" title="安全测试-使用IBM Security AppScan Standard扫描及结果分析" itemprop="url">安全测试-使用IBM Security AppScan Standard扫描及结果分析</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="Amiee Zhou" target="_blank" itemprop="author">Amiee Zhou</a>
 		
   <p class="article-time">
-    <time datetime="2016-05-18T06:46:19.000Z" itemprop="datePublished"> 发表于 2016-05-18</time>
+    <time datetime="2016-10-27T10:15:36.000Z" itemprop="datePublished"> 发表于 2016-10-27</time>
     
   </p>
 </header>
@@ -118,25 +137,57 @@ FIND_IN_SET()函数用法，
 		
 		</div>
 		
-		<p>查询数据库表中某个字段（值分行显示），可以用函数in()。今天工作中遇到一个问题，就是用FIND_IN_SET()函数解决的。</p>
-<p><strong>第一部分：</strong></p>
-<p>FIND_IN_SET()函数用法，</p>
-<p>查询用逗号分隔的字段，<br><img src="http://i.imgur.com/ipNzn2N.png" alt="图A"></p>
-<p>表A中 go_value字段的值是以逗号分割，<br>查询 go_value字段中含有3的行：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from A where find_in_set(&apos;3&apos;, go_value);</span><br></pre></td></tr></table></figure>
-<p><strong>第二部分：</strong></p>
-<p>in()函数用法</p>
-<p>查询数据库表中某个字段（值分行显示），</p>
-<p><img src="http://i.imgur.com/Bd9EmEG.png" alt="图B"></p>
-<p>表B中 prov字段的值是分行显示，</p>
-<p>查询 湖北省，天津市的gid数目</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select count(distinct(gid)) from B where prov in (&quot;湖北省&quot;,&quot;天津市&quot;);</span><br></pre></td></tr></table></figure>
-<p><strong>第三部分：</strong></p>
-<p>查询在湖北省，天津市的gid，但这些gid不在A表中的id为1的go_value字段里（这种情况，特别是当A表中id为1的go_value中<br>值非常多，或者需要多个go_value值时，非常适用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">select b.gid from (SELECT gid FROM B where prov IN (&quot;湖北省&quot;,&quot;天津市&quot;) ) b left outer join</span><br><span class="line">(select go_value as gid FROM A WHERE id=&apos;1&apos;) a on FIND_IN_SET(b.gid,a.gid) where a.gid is null;</span><br></pre></td></tr></table></figure></p>
-<p><strong>第四部分：</strong></p>
-<p>补充说明：</p>
-<p>只显示左连接查询不到的值，即显示A表存在，但B表不存在的值：   </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">select A.no,A.name,B.score from A left join B on A.no=B.no</span><br><span class="line">where b.score is null;</span><br></pre></td></tr></table></figure>
+		<p>最近测试支付系统，做了安全测试，使用IBM Security AppScan Standard扫描，并对结果进行分析。</p>
+<p><strong>第一部分:扫描步骤</strong></p>
+<p><strong>第二部分：扫描结果</strong></p>
+<p>对网站进行扫描后，查看问题，可以看到扫描出来的漏洞，其中，XSS漏洞需要重点被关注，XSS漏洞存在被钓鱼的风险。</p>
+<ol>
+<li>跨站点脚本编制：</li>
+</ol>
+<p><img src="http://i.imgur.com/wCsmLcs.png" alt=""></p>
+<p>点击“在浏览器中显示”按钮，查看链接并在自己浏览器中显示</p>
+<p><a href="http://testbilling.stnts.com/fulu/gameRecharge.do?gId=161&quot;/&gt;" target="_blank" rel="external">http://testbilling.stnts.com/fulu/gameRecharge.do?gId=161&quot;/&gt;</a><script>alert(10443)</script></p>
+<p>可看到alert信息</p>
+<ol>
+<li>通过框架钓鱼：</li>
+</ol>
+<p><img src="http://i.imgur.com/fdO6jqk.png" alt=""></p>
+<p>点击“在浏览器中显示”按钮，查看链接并在自己浏览器中显示</p>
+<p><a href="http://testbilling.stnts.com/fulu/gameRecharge.do?gId=161%27%22%3E%3Ciframe+id%3D10438+src%3Dhttp%3A%2F%2Fdemo.testfire.net%2Fphishing.html%3E" target="_blank" rel="external">http://testbilling.stnts.com/fulu/gameRecharge.do?gId=161%27%22%3E%3Ciframe+id%3D10438+src%3Dhttp%3A%2F%2Fdemo.testfire.net%2Fphishing.html%3E</a></p>
+<p>效果如下图</p>
+<p><img src="http://i.imgur.com/JagloVM.jpg" alt=""></p>
+<ol>
+<li>链接注入（便于跨站请求伪造）：</li>
+</ol>
+<p><img src="http://i.imgur.com/HgDxwlA.png" alt=""></p>
+<p>点击“在浏览器中显示”按钮，查看链接并在自己浏览器中显示</p>
+<p><a href="http://testbilling.stnts.com/fulu/gameRecharge.do?gId=%22%27%3E%3CIMG+SRC%3D%22%2FWF_XSRF10439.html%22%3E" target="_blank" rel="external">http://testbilling.stnts.com/fulu/gameRecharge.do?gId=%22%27%3E%3CIMG+SRC%3D%22%2FWF_XSRF10439.html%22%3E</a></p>
+<p>对于以上，建议解决方案：</p>
+<p>a.输入进行过滤或转义：输入检查一般是检查用户输入的数据中是否包含一些特殊字符，如&lt;、&gt;、’、”等，如果发现存在特殊字符，则将这些字符过滤或者编码；</p>
+<p>b.使用函数：使用一个更加严格的JavascriptEncode函数来保证安全——除数字、字母外的所有字符，都使用十六进制”\xHH”的方式进行编码。</p>
+<ol>
+<li>已解密的请求登录：</li>
+</ol>
+<p><img src="http://i.imgur.com/Fj7mnVl.jpg" alt=""></p>
+<p>点击“在浏览器中显示”按钮，查看链接并在自己浏览器中显示</p>
+<p><a href="http://testbilling.stnts.com/api/billing/pay.do?rechargeType=game&amp;uid=&amp;passport=yilewantest&amp;game_code=&amp;server_code=&amp;productCode=yilewan&amp;sourceCode=&amp;currency=STNTS_CURRENCY%2CE_CURRENCY" target="_blank" rel="external">http://testbilling.stnts.com/api/billing/pay.do?rechargeType=game&amp;uid=&amp;passport=yilewantest&amp;game_code=&amp;server_code=&amp;productCode=yilewan&amp;sourceCode=&amp;currency=STNTS_CURRENCY%2CE_CURRENCY</a> </p>
+<p>效果如下图：</p>
+<p><img src="http://i.imgur.com/65vwQzi.png" alt=""></p>
+<ol>
+<li>内部ip泄露</li>
+</ol>
+<p><img src="http://i.imgur.com/tbCDoHe.png" alt=""></p>
+<ol>
+<li>会话cookie中缺少HttpOnly属性</li>
+</ol>
+<p><img src="http://i.imgur.com/ozMvKZC.jpg" alt=""></p>
+<p>所有Cookie都设置HttpOnly属性</p>
+<ol>
+<li>针对cookie保护：</li>
+</ol>
+<p><img src="http://i.imgur.com/kqxhmiG.jpg" alt=""></p>
+<p>cookie的保护：6和7非常有效</p>
+<p>第6个，针对https的<br>第7个针对，XSS攻击cookie</p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -145,7 +196,7 @@ FIND_IN_SET()函数用法，
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/FIND-IN-SET-in/">FIND_IN_SET(),in()</a>
+  <span></span> <a href="/tags/IBM-Security-跨站点脚本编制（XSS）/">IBM Security,跨站点脚本编制（XSS）</a>
   </div>
 
 </div>
@@ -159,17 +210,10 @@ FIND_IN_SET()函数用法，
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2016/08/29/Java学习笔记（一）简介与环境搭建/" title="Java学习笔记（一）简介与环境搭建">
-  <span>
-  Java学习笔记（一）简介与环境搭建</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2016/05/17/windows-hexo-github搭建个人博客步骤及常见问题-1/"  title="windows-hexo-github搭建个人博客步骤及常见问题">
- <span>windows-hexo-github搭建个人博客步骤及常见问题
+<a href="/2016/09/07/Java学习笔记（四）-程序调试与数据类型转换/"  title="Java学习笔记（四） 程序调试与数据类型转换">
+ <span>Java学习笔记（四） 程序调试与数据类型转换
 </span>
 </a>
 </div>
