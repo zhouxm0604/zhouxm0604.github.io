@@ -4,44 +4,50 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>Java学习笔记（四） 程序调试与数据类型转换 | 小梦的博客</title>
+    <title>压力测试-SoupUI-Header参数化 | 小梦的博客</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Amiee Zhou">
     
 
     
-    <meta name="description" content="第一部分 程序调试
-1、设置断点
-方法一：编辑器中显示代码行号位置双击添加或删除当前行的断点
-方法二：在当前行号的位置单击鼠标右键-“切换断点”-添加或删除断点命令
-2、调试模式运行java程序
-编辑器或者包资源管理器java文件处：单击鼠标右键–“调试方法”（debug as）-“Java应用程序”命令
-3、程序调试
-单步跳过：F6键执行单步跳过操作，即运行单独的一行程序代码，但是不进入调用方法">
+    <meta name="description" content="第一部分：使用Cookie作为登录用户判断
+打开接口，左下角，Header设置Cookie
+
+第二部分：模拟不同用户登录操作，使Cookie参数化
+1、TestCase-AddStep-添加DataSource：
+
+2、添加你想加入的Cookie数据，这里有很多种方式，可以使用excel表格、从数据库读取（如果做性能测试，不建议使用，读取会影响性能结果）、直接添加数据（不从外界获取数据），在这里我">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java学习笔记（四） 程序调试与数据类型转换">
-<meta property="og:url" content="http://yoursite.com/2016/09/07/Java学习笔记（四）-程序调试与数据类型转换/index.html">
+<meta property="og:title" content="压力测试-SoupUI-Header参数化">
+<meta property="og:url" content="http://yoursite.com/2016/11/07/压力测试-Header参数化/index.html">
 <meta property="og:site_name" content="小梦的博客">
-<meta property="og:description" content="第一部分 程序调试
-1、设置断点
-方法一：编辑器中显示代码行号位置双击添加或删除当前行的断点
-方法二：在当前行号的位置单击鼠标右键-“切换断点”-添加或删除断点命令
-2、调试模式运行java程序
-编辑器或者包资源管理器java文件处：单击鼠标右键–“调试方法”（debug as）-“Java应用程序”命令
-3、程序调试
-单步跳过：F6键执行单步跳过操作，即运行单独的一行程序代码，但是不进入调用方法">
-<meta property="og:updated_time" content="2016-09-08T07:32:05.000Z">
+<meta property="og:description" content="第一部分：使用Cookie作为登录用户判断
+打开接口，左下角，Header设置Cookie
+
+第二部分：模拟不同用户登录操作，使Cookie参数化
+1、TestCase-AddStep-添加DataSource：
+
+2、添加你想加入的Cookie数据，这里有很多种方式，可以使用excel表格、从数据库读取（如果做性能测试，不建议使用，读取会影响性能结果）、直接添加数据（不从外界获取数据），在这里我">
+<meta property="og:image" content="http://i.imgur.com/32N3MjQ.png">
+<meta property="og:image" content="http://i.imgur.com/l6pGPHG.png">
+<meta property="og:image" content="http://i.imgur.com/EOlj5EV.jpg">
+<meta property="og:image" content="http://i.imgur.com/eMo8a2x.png">
+<meta property="og:image" content="http://i.imgur.com/YTpWsi0.png">
+<meta property="og:image" content="http://i.imgur.com/qg0oVd2.png">
+<meta property="og:image" content="http://i.imgur.com/UVLx4YY.png">
+<meta property="og:image" content="http://i.imgur.com/1DZBAlb.png">
+<meta property="og:updated_time" content="2016-11-07T13:29:12.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java学习笔记（四） 程序调试与数据类型转换">
-<meta name="twitter:description" content="第一部分 程序调试
-1、设置断点
-方法一：编辑器中显示代码行号位置双击添加或删除当前行的断点
-方法二：在当前行号的位置单击鼠标右键-“切换断点”-添加或删除断点命令
-2、调试模式运行java程序
-编辑器或者包资源管理器java文件处：单击鼠标右键–“调试方法”（debug as）-“Java应用程序”命令
-3、程序调试
-单步跳过：F6键执行单步跳过操作，即运行单独的一行程序代码，但是不进入调用方法">
+<meta name="twitter:title" content="压力测试-SoupUI-Header参数化">
+<meta name="twitter:description" content="第一部分：使用Cookie作为登录用户判断
+打开接口，左下角，Header设置Cookie
+
+第二部分：模拟不同用户登录操作，使Cookie参数化
+1、TestCase-AddStep-添加DataSource：
+
+2、添加你想加入的Cookie数据，这里有很多种方式，可以使用excel表格、从数据库读取（如果做性能测试，不建议使用，读取会影响性能结果）、直接添加数据（不从外界获取数据），在这里我">
+<meta name="twitter:image" content="http://i.imgur.com/32N3MjQ.png">
 
     
     <link rel="alternative" href="atom.xml" title="小梦的博客" type="application/atom+xml">
@@ -101,14 +107,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2016/09/07/Java学习笔记（四）-程序调试与数据类型转换/" title="Java学习笔记（四） 程序调试与数据类型转换" itemprop="url">Java学习笔记（四） 程序调试与数据类型转换</a>
+      <a href="/2016/11/07/压力测试-Header参数化/" title="压力测试-SoupUI-Header参数化" itemprop="url">压力测试-SoupUI-Header参数化</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="Amiee Zhou" target="_blank" itemprop="author">Amiee Zhou</a>
 		
   <p class="article-time">
-    <time datetime="2016-09-07T01:52:49.000Z" itemprop="datePublished"> 发表于 2016-09-07</time>
+    <time datetime="2016-11-07T13:10:40.000Z" itemprop="datePublished"> 发表于 2016-11-07</time>
     
   </p>
 </header>
@@ -121,45 +127,25 @@
 		
 		</div>
 		
-		<p><strong>第一部分 程序调试</strong></p>
-<p>1、设置断点</p>
-<p>方法一：编辑器中显示代码行号位置双击添加或删除当前行的断点</p>
-<p>方法二：在当前行号的位置单击鼠标右键-“切换断点”-添加或删除断点命令</p>
-<p>2、调试模式运行java程序</p>
-<p>编辑器或者包资源管理器java文件处：单击鼠标右键–“调试方法”（debug as）-“Java应用程序”命令</p>
-<p>3、程序调试</p>
-<p>单步跳过：F6键执行单步跳过操作，即运行单独的一行程序代码，但是不进入调用方法的内部，然后跳到下一个可执行点并暂挂线程。</p>
-<p>单步跳入：F5键执行该操作将跳入调用方法或对象的内部单步执行程序并暂挂线程。</p>
-<p><strong>第二部分 &amp;&amp;与&amp;的区别</strong></p>
-<p>1、使用“&amp;”：判断两个表达式，属于“非短路”运算符；</p>
-<p>2、逻辑运算符“&amp;&amp;”：针对boolean类型的类进行判断，当第一个表达式为false时，则不去判断第二个表达式，直接输出结果，从而节省计算机判断的次数，属于“短路”运算符；</p>
-<p><strong>第三部分 自增与自减</strong></p>
-<p>假设 a=4;</p>
-<p>1、b=++a;  //先将a的值加1，再赋给b,此时，a=5,b=5;</p>
-<p>2、b=a++; //先将a的值赋给b，再将a的值加1，此时，a=5,b=4;</p>
-<p><strong>第四部分 数据类型转换</strong></p>
-<p>1、类型从低到高排列顺序：</p>
-<p>byte&lt;short&lt;int&lt;long&lt;float&lt;double</p>
-<p>byte(8位)：-128~127</p>
-<p>short(16位):-32768~32767</p>
-<p>int(32位)：-2147483648~2147483647</p>
-<p>long(64位)：-9223372036854775808~9223372036854775807</p>
-<p>2、隐式类型转换：</p>
-<p>隐式类型转换：从低级类型向高级类型转换，系统将自动执行，这种类型的转换，成为隐式类型转换；</p>
-<p>例：</p>
-<p>int x=50;</p>
-<p>float y=x;</p>
-<p>y的结果为50.0</p>
-<p>3、显式类型转换（强制类型转换）</p>
-<p>显式类型转换：当把高精度的变量的值赋给低精度的变量时，必须使用显示类型转化运算（又称强制类型转换）；</p>
-<p>例：</p>
-<p>int a=(int) 45.23;  //a的值为45</p>
-<p>long y=(long) 456.6F; //y的值为456</p>
-<p>int b=(int)’d’;  //b的值为100</p>
-<p>说明：当把整数赋值给一个byte、short、int、long型变量时，不可以超出这些变量的取值范围，否则必须进行强制类型转换。</p>
-<p>例：</p>
-<p>byte b=(byte) 129;</p>
-<p>注：Java基本数据类型中并没有String类型。</p>
+		<p><strong>第一部分：使用Cookie作为登录用户判断</strong></p>
+<p>打开接口，左下角，Header设置Cookie</p>
+<p><img src="http://i.imgur.com/32N3MjQ.png" alt=""></p>
+<p><strong>第二部分：模拟不同用户登录操作，使Cookie参数化</strong></p>
+<p>1、TestCase-AddStep-添加DataSource：</p>
+<p><img src="http://i.imgur.com/l6pGPHG.png" alt=""></p>
+<p>2、添加你想加入的Cookie数据，这里有很多种方式，可以使用excel表格、从数据库读取（如果做性能测试，不建议使用，读取会影响性能结果）、直接添加数据（不从外界获取数据），在这里我们使用直接添加数据：右侧DataSource-选择Grid，左侧添加参数与数值：</p>
+<p><img src="http://i.imgur.com/EOlj5EV.jpg" alt=""></p>
+<p><strong>第三部分：Header参数化</strong><br>1、在Request中输入参数（取DataSource中数据），注意，这里需要自己手动输入，不可进行填写：</p>
+<p><img src="http://i.imgur.com/eMo8a2x.png" alt=""></p>
+<p>2、最后添加循环，使Cookie循环取DataSource中数据-TestCase-AddStep-添加DataSource Loop：</p>
+<p><img src="http://i.imgur.com/YTpWsi0.png" alt=""></p>
+<p>3、设置DataSource Loop：</p>
+<p><img src="http://i.imgur.com/qg0oVd2.png" alt=""></p>
+<p>4、双击TestCase，点击左上角运行：</p>
+<p><img src="http://i.imgur.com/UVLx4YY.png" alt=""></p>
+<p>5、查看运行结果，可以清晰的看到循环取数据，运行接口的步骤：</p>
+<p><img src="http://i.imgur.com/1DZBAlb.png" alt=""></p>
+<p>6、此时就可以使用LoadTest进行压力测试了。</p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -168,7 +154,7 @@
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/程序调试、数据类型转换/">程序调试、数据类型转换</a>
+  <span></span> <a href="/tags/压力测试，SoupUI-Header参数化-登录Cookie参数化/">压力测试，SoupUI,Header参数化,登录Cookie参数化</a>
   </div>
 
 </div>
@@ -182,17 +168,10 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2016/10/27/安全测试-使用IBM-Security扫描及结果分析/" title="安全测试-使用IBM Security AppScan Standard扫描及结果分析">
-  <span>
-  安全测试-使用IBM Security AppScan Standard扫描及结果分析</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2016/09/05/Java学习笔记（三）加减乘除运算器/"  title="Java学习笔记（三）加减乘除运算器">
- <span>Java学习笔记（三）加减乘除运算器
+<a href="/2016/11/07/性能测试-使用SoupUI进行压测/"  title="性能测试-使用SoupUI进行压测">
+ <span>性能测试-使用SoupUI进行压测
 </span>
 </a>
 </div>

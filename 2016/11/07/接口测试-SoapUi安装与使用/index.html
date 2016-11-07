@@ -4,44 +4,70 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>Java学习笔记（四） 程序调试与数据类型转换 | 小梦的博客</title>
+    <title>接口测试-SoapUi安装与使用 | 小梦的博客</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Amiee Zhou">
     
 
     
-    <meta name="description" content="第一部分 程序调试
-1、设置断点
-方法一：编辑器中显示代码行号位置双击添加或删除当前行的断点
-方法二：在当前行号的位置单击鼠标右键-“切换断点”-添加或删除断点命令
-2、调试模式运行java程序
-编辑器或者包资源管理器java文件处：单击鼠标右键–“调试方法”（debug as）-“Java应用程序”命令
-3、程序调试
-单步跳过：F6键执行单步跳过操作，即运行单独的一行程序代码，但是不进入调用方法">
+    <meta name="description" content="第一部分：
+工具安装：
+
+4.5.2的pro版可使用4.5.1的破解方法
+第二部分:
+安装后修改部位：
+如果我们发出的请求带中文，请在soapUI-Pro-4.5.2.vmoptions文件中添加一行数据：-Dfile.encoding=UTF-8
+
+第三部分：
+1、右键单击Project，选择New soapUI Project（Ctrl-N）:
+
+2、 Project Name中输入工程名“[">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java学习笔记（四） 程序调试与数据类型转换">
-<meta property="og:url" content="http://yoursite.com/2016/09/07/Java学习笔记（四）-程序调试与数据类型转换/index.html">
+<meta property="og:title" content="接口测试-SoapUi安装与使用">
+<meta property="og:url" content="http://yoursite.com/2016/11/07/接口测试-SoapUi安装与使用/index.html">
 <meta property="og:site_name" content="小梦的博客">
-<meta property="og:description" content="第一部分 程序调试
-1、设置断点
-方法一：编辑器中显示代码行号位置双击添加或删除当前行的断点
-方法二：在当前行号的位置单击鼠标右键-“切换断点”-添加或删除断点命令
-2、调试模式运行java程序
-编辑器或者包资源管理器java文件处：单击鼠标右键–“调试方法”（debug as）-“Java应用程序”命令
-3、程序调试
-单步跳过：F6键执行单步跳过操作，即运行单独的一行程序代码，但是不进入调用方法">
-<meta property="og:updated_time" content="2016-09-08T07:32:05.000Z">
+<meta property="og:description" content="第一部分：
+工具安装：
+
+4.5.2的pro版可使用4.5.1的破解方法
+第二部分:
+安装后修改部位：
+如果我们发出的请求带中文，请在soapUI-Pro-4.5.2.vmoptions文件中添加一行数据：-Dfile.encoding=UTF-8
+
+第三部分：
+1、右键单击Project，选择New soapUI Project（Ctrl-N）:
+
+2、 Project Name中输入工程名“[">
+<meta property="og:image" content="http://i.imgur.com/2uNoRxf.png">
+<meta property="og:image" content="http://i.imgur.com/jviqQMR.png">
+<meta property="og:image" content="http://i.imgur.com/vAZDhH0.jpg">
+<meta property="og:image" content="http://i.imgur.com/fHcLiDu.png">
+<meta property="og:image" content="http://i.imgur.com/izETHhy.jpg">
+<meta property="og:image" content="http://i.imgur.com/THz4xU0.png">
+<meta property="og:image" content="http://i.imgur.com/KYVchpg.png">
+<meta property="og:image" content="http://i.imgur.com/uJPXSix.jpg">
+<meta property="og:image" content="http://i.imgur.com/oC7TG83.png">
+<meta property="og:image" content="http://i.imgur.com/gdGpm9d.png">
+<meta property="og:image" content="http://i.imgur.com/6x9PUYq.png">
+<meta property="og:image" content="http://i.imgur.com/sWCVnQd.png">
+<meta property="og:image" content="http://i.imgur.com/1QJWOxh.png">
+<meta property="og:updated_time" content="2016-11-07T12:22:28.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java学习笔记（四） 程序调试与数据类型转换">
-<meta name="twitter:description" content="第一部分 程序调试
-1、设置断点
-方法一：编辑器中显示代码行号位置双击添加或删除当前行的断点
-方法二：在当前行号的位置单击鼠标右键-“切换断点”-添加或删除断点命令
-2、调试模式运行java程序
-编辑器或者包资源管理器java文件处：单击鼠标右键–“调试方法”（debug as）-“Java应用程序”命令
-3、程序调试
-单步跳过：F6键执行单步跳过操作，即运行单独的一行程序代码，但是不进入调用方法">
+<meta name="twitter:title" content="接口测试-SoapUi安装与使用">
+<meta name="twitter:description" content="第一部分：
+工具安装：
+
+4.5.2的pro版可使用4.5.1的破解方法
+第二部分:
+安装后修改部位：
+如果我们发出的请求带中文，请在soapUI-Pro-4.5.2.vmoptions文件中添加一行数据：-Dfile.encoding=UTF-8
+
+第三部分：
+1、右键单击Project，选择New soapUI Project（Ctrl-N）:
+
+2、 Project Name中输入工程名“[">
+<meta name="twitter:image" content="http://i.imgur.com/2uNoRxf.png">
 
     
     <link rel="alternative" href="atom.xml" title="小梦的博客" type="application/atom+xml">
@@ -101,14 +127,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2016/09/07/Java学习笔记（四）-程序调试与数据类型转换/" title="Java学习笔记（四） 程序调试与数据类型转换" itemprop="url">Java学习笔记（四） 程序调试与数据类型转换</a>
+      <a href="/2016/11/07/接口测试-SoapUi安装与使用/" title="接口测试-SoapUi安装与使用" itemprop="url">接口测试-SoapUi安装与使用</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="Amiee Zhou" target="_blank" itemprop="author">Amiee Zhou</a>
 		
   <p class="article-time">
-    <time datetime="2016-09-07T01:52:49.000Z" itemprop="datePublished"> 发表于 2016-09-07</time>
+    <time datetime="2016-11-07T11:23:41.000Z" itemprop="datePublished"> 发表于 2016-11-07</time>
     
   </p>
 </header>
@@ -121,45 +147,41 @@
 		
 		</div>
 		
-		<p><strong>第一部分 程序调试</strong></p>
-<p>1、设置断点</p>
-<p>方法一：编辑器中显示代码行号位置双击添加或删除当前行的断点</p>
-<p>方法二：在当前行号的位置单击鼠标右键-“切换断点”-添加或删除断点命令</p>
-<p>2、调试模式运行java程序</p>
-<p>编辑器或者包资源管理器java文件处：单击鼠标右键–“调试方法”（debug as）-“Java应用程序”命令</p>
-<p>3、程序调试</p>
-<p>单步跳过：F6键执行单步跳过操作，即运行单独的一行程序代码，但是不进入调用方法的内部，然后跳到下一个可执行点并暂挂线程。</p>
-<p>单步跳入：F5键执行该操作将跳入调用方法或对象的内部单步执行程序并暂挂线程。</p>
-<p><strong>第二部分 &amp;&amp;与&amp;的区别</strong></p>
-<p>1、使用“&amp;”：判断两个表达式，属于“非短路”运算符；</p>
-<p>2、逻辑运算符“&amp;&amp;”：针对boolean类型的类进行判断，当第一个表达式为false时，则不去判断第二个表达式，直接输出结果，从而节省计算机判断的次数，属于“短路”运算符；</p>
-<p><strong>第三部分 自增与自减</strong></p>
-<p>假设 a=4;</p>
-<p>1、b=++a;  //先将a的值加1，再赋给b,此时，a=5,b=5;</p>
-<p>2、b=a++; //先将a的值赋给b，再将a的值加1，此时，a=5,b=4;</p>
-<p><strong>第四部分 数据类型转换</strong></p>
-<p>1、类型从低到高排列顺序：</p>
-<p>byte&lt;short&lt;int&lt;long&lt;float&lt;double</p>
-<p>byte(8位)：-128~127</p>
-<p>short(16位):-32768~32767</p>
-<p>int(32位)：-2147483648~2147483647</p>
-<p>long(64位)：-9223372036854775808~9223372036854775807</p>
-<p>2、隐式类型转换：</p>
-<p>隐式类型转换：从低级类型向高级类型转换，系统将自动执行，这种类型的转换，成为隐式类型转换；</p>
-<p>例：</p>
-<p>int x=50;</p>
-<p>float y=x;</p>
-<p>y的结果为50.0</p>
-<p>3、显式类型转换（强制类型转换）</p>
-<p>显式类型转换：当把高精度的变量的值赋给低精度的变量时，必须使用显示类型转化运算（又称强制类型转换）；</p>
-<p>例：</p>
-<p>int a=(int) 45.23;  //a的值为45</p>
-<p>long y=(long) 456.6F; //y的值为456</p>
-<p>int b=(int)’d’;  //b的值为100</p>
-<p>说明：当把整数赋值给一个byte、short、int、long型变量时，不可以超出这些变量的取值范围，否则必须进行强制类型转换。</p>
-<p>例：</p>
-<p>byte b=(byte) 129;</p>
-<p>注：Java基本数据类型中并没有String类型。</p>
+		<p>第一部分：</p>
+<p><strong>工具安装：</strong></p>
+<p><img src="http://i.imgur.com/2uNoRxf.png" alt=""></p>
+<p>4.5.2的pro版可使用4.5.1的破解方法</p>
+<p><strong>第二部分:</strong></p>
+<p>安装后修改部位：</p>
+<p>如果我们发出的请求带中文，请在soapUI-Pro-4.5.2.vmoptions文件中添加一行数据：-Dfile.encoding=UTF-8</p>
+<p><img src="http://i.imgur.com/jviqQMR.png" alt=""></p>
+<p><strong>第三部分：</strong></p>
+<p>1、右键单击Project，选择New soapUI Project（Ctrl-N）:</p>
+<p><img src="http://i.imgur.com/vAZDhH0.jpg" alt=""></p>
+<p>2、 Project Name中输入工程名“[易米]获取游戏帐号信息”，Initial WSDL中选择wsdl文件，其余的默认，点击“OK”；或者在此不选择wsdl文件，后面可以选择（这里关于WSDL和WADL的区别，大家可以理解为一种接口规范，需要java组的开发人员添加相关代码，目前公司没人使用这两种规范，所以在此可以空着不填）。</p>
+<p><img src="http://i.imgur.com/fHcLiDu.png" alt=""></p>
+<p>3、找到创建的工程，反键点击“New REST Service”</p>
+<p><img src="http://i.imgur.com/izETHhy.jpg" alt=""></p>
+<p>4、弹窗输入项目名和接口地址：</p>
+<p><img src="http://i.imgur.com/THz4xU0.png" alt=""></p>
+<p>5、添加参数：</p>
+<p><img src="http://i.imgur.com/KYVchpg.png" alt=""></p>
+<p>6、最后确定请求方式：</p>
+<p><img src="http://i.imgur.com/uJPXSix.jpg" alt=""></p>
+<p><em>注意：接口地址中间也不要带上空格</em></p>
+<p>7、get请求与post（可在Request标签下面选中“Post QueryString”）请求：</p>
+<p>get请求：</p>
+<p><img src="http://i.imgur.com/oC7TG83.png" alt=""></p>
+<p>post请求:</p>
+<p><img src="http://i.imgur.com/gdGpm9d.png" alt=""></p>
+<p>8、 点开项目-Request 1:</p>
+<p><img src="http://i.imgur.com/6x9PUYq.png" alt=""></p>
+<p>9、右边框中点击运行:</p>
+<p><img src="http://i.imgur.com/sWCVnQd.png" alt=""></p>
+<p>10、返回jason串：</p>
+<p><img src="http://i.imgur.com/1QJWOxh.png" alt=""></p>
+<p><strong>这款工具缺点：</strong></p>
+<p>目前该工具支持的脚本只有groovy，例如python、shell、TCL、Perl这些都不支持。</p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -168,7 +190,7 @@
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/程序调试、数据类型转换/">程序调试、数据类型转换</a>
+  <span></span> <a href="/tags/SoapUi-接口测试-安装与使用/">SoapUi,接口测试,安装与使用</a>
   </div>
 
 </div>
@@ -183,16 +205,16 @@
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/2016/10/27/安全测试-使用IBM-Security扫描及结果分析/" title="安全测试-使用IBM Security AppScan Standard扫描及结果分析">
+ <a href="/2016/11/07/性能测试-使用SoupUI进行压测/" title="性能测试-使用SoupUI进行压测">
   <span>
-  安全测试-使用IBM Security AppScan Standard扫描及结果分析</span>
+  性能测试-使用SoupUI进行压测</span>
 </a>
 </div>
 
 
 <div class="next">
-<a href="/2016/09/05/Java学习笔记（三）加减乘除运算器/"  title="Java学习笔记（三）加减乘除运算器">
- <span>Java学习笔记（三）加减乘除运算器
+<a href="/2016/10/27/安全测试-使用IBM-Security扫描及结果分析/"  title="安全测试-使用IBM Security AppScan Standard扫描及结果分析">
+ <span>安全测试-使用IBM Security AppScan Standard扫描及结果分析
 </span>
 </a>
 </div>
