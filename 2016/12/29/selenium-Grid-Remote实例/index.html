@@ -4,72 +4,49 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>安全测试-使用IBM Security AppScan Standard扫描及结果分析 | 小梦的博客</title>
+    <title>selenium+Grid Remote实例与谷歌运行报错分析 | 小梦的博客</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Amiee Zhou">
     
 
     
-    <meta name="description" content="最近测试支付系统，做了安全测试，使用IBM Security AppScan Standard扫描，并对结果进行分析。
-第一部分:扫描步骤
+    <meta name="description" content="近期做CI自动化持续集成，这里主要介绍一下使用Selenium Grid实现Remote实例，远程测试机自动跑用例的步骤。
+配置环境
 
-进入工具，点击左上角扫描-完全扫描
+下载Selenium Server，因为Selenium Grid功能已集成到Selenium Server中，所以需要下载Selenium Server，才可以使用Grid2功能；
+配置Java环境，安装jdk，配置环境变量，这块就不多说了；
 
-
-输入要扫描网址
-
-在弹出的对话框中选择“否”-扫描过程中自动保存
-
-开始扫描（未登录情况扫描，也可以进行登录扫描）
-第二部分：扫描结果
-对网站进行扫描后，查看问题，可以看到扫描出来的漏洞，其中，XSS漏洞需要重点被关注">
+代码
+12345">
 <meta property="og:type" content="article">
-<meta property="og:title" content="安全测试-使用IBM Security AppScan Standard扫描及结果分析">
-<meta property="og:url" content="http://yoursite.com/2016/10/27/安全测试-使用IBM-Security扫描及结果分析/index.html">
+<meta property="og:title" content="selenium+Grid Remote实例与谷歌运行报错分析">
+<meta property="og:url" content="http://yoursite.com/2016/12/29/selenium-Grid-Remote实例/index.html">
 <meta property="og:site_name" content="小梦的博客">
-<meta property="og:description" content="最近测试支付系统，做了安全测试，使用IBM Security AppScan Standard扫描，并对结果进行分析。
-第一部分:扫描步骤
+<meta property="og:description" content="近期做CI自动化持续集成，这里主要介绍一下使用Selenium Grid实现Remote实例，远程测试机自动跑用例的步骤。
+配置环境
 
-进入工具，点击左上角扫描-完全扫描
+下载Selenium Server，因为Selenium Grid功能已集成到Selenium Server中，所以需要下载Selenium Server，才可以使用Grid2功能；
+配置Java环境，安装jdk，配置环境变量，这块就不多说了；
 
-
-输入要扫描网址
-
-在弹出的对话框中选择“否”-扫描过程中自动保存
-
-开始扫描（未登录情况扫描，也可以进行登录扫描）
-第二部分：扫描结果
-对网站进行扫描后，查看问题，可以看到扫描出来的漏洞，其中，XSS漏洞需要重点被关注">
-<meta property="og:image" content="http://i.imgur.com/nw3cINt.jpg">
-<meta property="og:image" content="http://i.imgur.com/bJplbE8.png">
-<meta property="og:image" content="http://i.imgur.com/UiHAH5c.jpg">
-<meta property="og:image" content="http://i.imgur.com/wCsmLcs.png">
-<meta property="og:image" content="http://i.imgur.com/fdO6jqk.png">
-<meta property="og:image" content="http://i.imgur.com/JagloVM.jpg">
-<meta property="og:image" content="http://i.imgur.com/HgDxwlA.png">
-<meta property="og:image" content="http://i.imgur.com/Fj7mnVl.jpg">
-<meta property="og:image" content="http://i.imgur.com/65vwQzi.png">
-<meta property="og:image" content="http://i.imgur.com/tbCDoHe.png">
-<meta property="og:image" content="http://i.imgur.com/ozMvKZC.jpg">
-<meta property="og:image" content="http://i.imgur.com/kqxhmiG.jpg">
-<meta property="og:updated_time" content="2016-10-27T11:36:05.000Z">
+代码
+12345">
+<meta property="og:image" content="http://i.imgur.com/uY4xFmZ.png">
+<meta property="og:image" content="http://i.imgur.com/V68DIDx.png">
+<meta property="og:image" content="http://i.imgur.com/ebUkzbT.png">
+<meta property="og:image" content="http://i.imgur.com/P3qWyeI.png">
+<meta property="og:updated_time" content="2016-12-29T13:45:54.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="安全测试-使用IBM Security AppScan Standard扫描及结果分析">
-<meta name="twitter:description" content="最近测试支付系统，做了安全测试，使用IBM Security AppScan Standard扫描，并对结果进行分析。
-第一部分:扫描步骤
+<meta name="twitter:title" content="selenium+Grid Remote实例与谷歌运行报错分析">
+<meta name="twitter:description" content="近期做CI自动化持续集成，这里主要介绍一下使用Selenium Grid实现Remote实例，远程测试机自动跑用例的步骤。
+配置环境
 
-进入工具，点击左上角扫描-完全扫描
+下载Selenium Server，因为Selenium Grid功能已集成到Selenium Server中，所以需要下载Selenium Server，才可以使用Grid2功能；
+配置Java环境，安装jdk，配置环境变量，这块就不多说了；
 
-
-输入要扫描网址
-
-在弹出的对话框中选择“否”-扫描过程中自动保存
-
-开始扫描（未登录情况扫描，也可以进行登录扫描）
-第二部分：扫描结果
-对网站进行扫描后，查看问题，可以看到扫描出来的漏洞，其中，XSS漏洞需要重点被关注">
-<meta name="twitter:image" content="http://i.imgur.com/nw3cINt.jpg">
+代码
+12345">
+<meta name="twitter:image" content="http://i.imgur.com/uY4xFmZ.png">
 
     
     <link rel="alternative" href="atom.xml" title="小梦的博客" type="application/atom+xml">
@@ -129,14 +106,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2016/10/27/安全测试-使用IBM-Security扫描及结果分析/" title="安全测试-使用IBM Security AppScan Standard扫描及结果分析" itemprop="url">安全测试-使用IBM Security AppScan Standard扫描及结果分析</a>
+      <a href="/2016/12/29/selenium-Grid-Remote实例/" title="selenium+Grid Remote实例与谷歌运行报错分析" itemprop="url">selenium+Grid Remote实例与谷歌运行报错分析</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="Amiee Zhou" target="_blank" itemprop="author">Amiee Zhou</a>
 		
   <p class="article-time">
-    <time datetime="2016-10-27T10:15:36.000Z" itemprop="datePublished"> 发表于 2016-10-27</time>
+    <time datetime="2016-12-29T12:06:31.000Z" itemprop="datePublished"> 发表于 2016-12-29</time>
     
   </p>
 </header>
@@ -149,66 +126,44 @@
 		
 		</div>
 		
-		<p>最近测试支付系统，做了安全测试，使用IBM Security AppScan Standard扫描，并对结果进行分析。</p>
-<p><strong>第一部分:扫描步骤</strong></p>
+		<p>近期做CI自动化持续集成，这里主要介绍一下使用Selenium Grid实现Remote实例，远程测试机自动跑用例的步骤。</p>
+<p><strong>配置环境</strong></p>
 <ol>
-<li>进入工具，点击左上角扫描-完全扫描</li>
+<li>下载Selenium Server，因为Selenium Grid功能已集成到Selenium Server中，所以需要下载Selenium Server，才可以使用Grid2功能；</li>
+<li>配置Java环境，安装jdk，配置环境变量，这块就不多说了；</li>
 </ol>
-<p><img src="http://i.imgur.com/nw3cINt.jpg" alt=""></p>
-<p>输入要扫描网址</p>
-<p><img src="http://i.imgur.com/bJplbE8.png" alt=""></p>
-<p>在弹出的对话框中选择“否”-扫描过程中自动保存</p>
-<p><img src="http://i.imgur.com/UiHAH5c.jpg" alt=""></p>
-<p>开始扫描（未登录情况扫描，也可以进行登录扫描）</p>
-<p><strong>第二部分：扫描结果</strong></p>
-<p>对网站进行扫描后，查看问题，可以看到扫描出来的漏洞，其中，XSS漏洞需要重点被关注，XSS漏洞存在被钓鱼的风险。</p>
+<p><strong>代码</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"># encoding: utf-8</span><br><span class="line"></span><br><span class="line">from selenium import webdriver</span><br><span class="line">from selenium.webdriver import Remote</span><br><span class="line">import time,re</span><br><span class="line">import unittest</span><br><span class="line"></span><br><span class="line">#定义主机与浏览器</span><br><span class="line">lists = &#123;</span><br><span class="line">           #&apos;http://127.0.0.1:4444/wd/hub&apos;:&apos;chrome&apos;,</span><br><span class="line">           #&apos;http://127.0.0.1:5556/wd/hub&apos;:&apos;firefox&apos;</span><br><span class="line">           #&apos;http://192.168.74.129:5555/wd/hub&apos;:&apos;internet explorer&apos;</span><br><span class="line">           #&apos;http://192.168.74.129:5555/wd/hub&apos;:&apos;internet explorer&apos;</span><br><span class="line">           #注意这里是设置远程机器的ip与端口</span><br><span class="line">           &apos;http://192.168.38.43:7777/wd/hub&apos;:&apos;chrome&apos;,</span><br><span class="line">           &apos;http://192.168.38.37:5555/wd/hub&apos;:&apos;chrome&apos;</span><br><span class="line">           #&apos;http://192.168.39.6:5555/wd/hub&apos;:&apos;chrome&apos;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#调用Remote方法</span><br><span class="line">for host,browser in lists.items():</span><br><span class="line">    print(host,browser)</span><br><span class="line"></span><br><span class="line">    driver = Remote(command_executor=host,</span><br><span class="line">                    desired_capabilities=&#123;&apos;platform&apos;:&apos;ANY&apos;,</span><br><span class="line">                                          &apos;browserName&apos;:browser,</span><br><span class="line">                                          &apos;version&apos;:&apos;&apos;,</span><br><span class="line">                                          &apos;javascriptEnabled&apos;:True</span><br><span class="line">                                         &#125;</span><br><span class="line">                   )</span><br><span class="line"></span><br><span class="line">    driver.get(&quot;http://www.baidu.com&quot;)</span><br><span class="line">    driver.find_element_by_id(&quot;kw&quot;).send_keys(&quot;Selenium2&quot;)</span><br><span class="line">    driver.find_element_by_id(&quot;su&quot;).click()</span><br><span class="line">    time.sleep(3)</span><br><span class="line"></span><br><span class="line">    driver.close()</span><br></pre></td></tr></table></figure>
+<p><strong>操作步骤</strong></p>
+<p>这里先说明一下原理：<br>一个hub主节点和若干node代理节点组成。hub用来管理各个代理节点的注册和状态信息，并且接受远程客户端代码的请求调用，然后把请求的命令再转发给代理节点来执行。</p>
+<p>前提：</p>
+<p>a. 本地hub主机与远程node主机之间可以用ping命令连通；<br>b. 远程主机必须安装用例执行的浏览器及驱动，并且驱动要放在环境变量path的目录下。<br>c. 远程主机必须安装java环境，因为需要运行Selenium Server。</p>
 <ol>
-<li>跨站点脚本编制：</li>
+<li>启动本地hub主机（本地ip:192.168.38.41），进入Selenium Server jar包目录下，执行命令</li>
 </ol>
-<p><img src="http://i.imgur.com/wCsmLcs.png" alt=""></p>
-<p>点击“在浏览器中显示”按钮，查看链接并在自己浏览器中显示</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://testbilling.stnts.com/fulu/gameRecharge.do?gId=161&quot;/&gt;&lt;script&gt;alert(10443)&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<p>可看到alert信息</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -jar selenium-server-standalone-2.47.1.jar -role hub</span><br></pre></td></tr></table></figure>
+<p>如图：</p>
+<p><img src="http://i.imgur.com/uY4xFmZ.png" alt=""></p>
 <ol>
-<li>通过框架钓鱼：</li>
+<li>启动远程node主机（node主机ip:192.168.38.37）,同样的，进入Selenium Server jar包目录下，执行命令</li>
 </ol>
-<p><img src="http://i.imgur.com/fdO6jqk.png" alt=""></p>
-<p>点击“在浏览器中显示”按钮，查看链接并在自己浏览器中显示</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://testbilling.stnts.com/fulu/gameRecharge.do?gId=161%27%22%3E%3Ciframe+id%3D10438+src%3Dhttp%3A%2F%2Fdemo.testfire.net%2Fphishing.html%3E</span><br></pre></td></tr></table></figure>
-<p>效果如下图</p>
-<p><img src="http://i.imgur.com/JagloVM.jpg" alt=""></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -jar selenium-server-standalone-2.47.1.jar -role node -port 5555 -hub http://192.168.38.41:4444/grid/register</span><br></pre></td></tr></table></figure>
+<p>如图：</p>
+<p><img src="http://i.imgur.com/V68DIDx.png" alt=""></p>
 <ol>
-<li>链接注入（便于跨站请求伪造）：</li>
+<li>执行用例，查看远程机器：</li>
 </ol>
-<p><img src="http://i.imgur.com/HgDxwlA.png" alt=""></p>
-<p>点击“在浏览器中显示”按钮，查看链接并在自己浏览器中显示</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://testbilling.stnts.com/fulu/gameRecharge.do?gId=%22%27%3E%3CIMG+SRC%3D%22%2FWF_XSRF10439.html%22%3E</span><br></pre></td></tr></table></figure>
-<p>对于以上，建议解决方案：</p>
-<p>a.输入进行过滤或转义：输入检查一般是检查用户输入的数据中是否包含一些特殊字符，如&lt;、&gt;、’、”等，如果发现存在特殊字符，则将这些字符过滤或者编码；</p>
-<p>b.使用函数：使用一个更加严格的JavascriptEncode函数来保证安全——除数字、字母外的所有字符，都使用十六进制”\xHH”的方式进行编码。</p>
-<ol>
-<li>已解密的请求登录：</li>
-</ol>
-<p><img src="http://i.imgur.com/Fj7mnVl.jpg" alt=""></p>
-<p>点击“在浏览器中显示”按钮，查看链接并在自己浏览器中显示</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">http://testbilling.stnts.com/api/billing/pay.do?rechargeType=game&amp;uid=&amp;passport=yilewantest&amp;game_code=&amp;server_code=&amp;</span><br><span class="line">productCode=yilewan&amp;sourceCode=&amp;currency=STNTS_CURRENCY%2CE_CURRENCY</span><br></pre></td></tr></table></figure>
-<p>效果如下图：</p>
-<p><img src="http://i.imgur.com/65vwQzi.png" alt=""></p>
-<ol>
-<li>内部ip泄露</li>
-</ol>
-<p><img src="http://i.imgur.com/tbCDoHe.png" alt=""></p>
-<ol>
-<li>会话cookie中缺少HttpOnly属性</li>
-</ol>
-<p><img src="http://i.imgur.com/ozMvKZC.jpg" alt=""></p>
-<p>所有Cookie都设置HttpOnly属性</p>
-<ol>
-<li>针对cookie保护：</li>
-</ol>
-<p><img src="http://i.imgur.com/kqxhmiG.jpg" alt=""></p>
-<p>cookie的保护：6和7非常有效</p>
-<p>第6个，针对https的<br>第7个针对，XSS攻击cookie</p>
+<p>如图：</p>
+<p><img src="http://i.imgur.com/ebUkzbT.png" alt=""></p>
+<p><strong>谷歌运行报错分析</strong></p>
+<p>远程调用谷歌时，报错“请停用以开发者模式运行的扩展程序”：</p>
+<p>试了很多方法都没有解决，包括把插件加入白名单，或者删掉插件，最后发现，是谷歌的驱动版本太老，不支持最新版谷歌的原因：<br>报错截图：</p>
+<p><img src="http://i.imgur.com/P3qWyeI.png" alt=""></p>
+<p>解决方法：</p>
+<p>node机器，下载最新的谷歌版本，与谷歌驱动，进行替换，问题就解决了。</p>
+<p>ps：注意,要把下载的谷歌驱动与selenium server放到环境变量下。</p>
+<p><strong>实现多台node主机线程跑</strong></p>
+<p>看到我粘贴的代码了，创建list字典，定义不同的ip，端口号及浏览器。然后，通过for循环读取lists字典中的数据作为Remote()的配置信息，从而使脚本在不同的节点及浏览器下执行。<br>当然，也可以并发多个Node测试机同时跑用例，使用python多进程技术，后面会讲到。</p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -217,7 +172,7 @@
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/IBM-Security-跨站点脚本编制（XSS）/">IBM Security,跨站点脚本编制（XSS）</a>
+  <span></span> <a href="/tags/selenium-gird-remote-谷歌运行报错-请停用以开发者模式运行的扩展程序/">selenium,gird,remote,谷歌运行报错,请停用以开发者模式运行的扩展程序</a>
   </div>
 
 </div>
@@ -231,17 +186,10 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2016/11/07/接口测试-SoapUi安装与使用/" title="接口测试-SoapUi安装与使用">
-  <span>
-  接口测试-SoapUi安装与使用</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2016/09/07/Java学习笔记（四）-程序调试与数据类型转换/"  title="Java学习笔记（四） 程序调试与数据类型转换">
- <span>Java学习笔记（四） 程序调试与数据类型转换
+<a href="/2016/11/07/压力测试-Header参数化/"  title="压力测试-SoupUI-Header参数化">
+ <span>压力测试-SoupUI-Header参数化
 </span>
 </a>
 </div>

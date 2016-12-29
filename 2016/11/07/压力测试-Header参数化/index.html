@@ -32,12 +32,12 @@
 <meta property="og:image" content="http://i.imgur.com/32N3MjQ.png">
 <meta property="og:image" content="http://i.imgur.com/l6pGPHG.png">
 <meta property="og:image" content="http://i.imgur.com/EOlj5EV.jpg">
-<meta property="og:image" content="http://i.imgur.com/eMo8a2x.png">
+<meta property="og:image" content="http://i.imgur.com/HFoT2Vh.png">
 <meta property="og:image" content="http://i.imgur.com/YTpWsi0.png">
 <meta property="og:image" content="http://i.imgur.com/qg0oVd2.png">
 <meta property="og:image" content="http://i.imgur.com/UVLx4YY.png">
 <meta property="og:image" content="http://i.imgur.com/1DZBAlb.png">
-<meta property="og:updated_time" content="2016-11-07T13:29:12.000Z">
+<meta property="og:updated_time" content="2016-11-08T06:35:29.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="压力测试-SoupUI-Header参数化">
 <meta name="twitter:description" content="第一部分：使用Cookie作为登录用户判断
@@ -135,8 +135,8 @@
 <p><img src="http://i.imgur.com/l6pGPHG.png" alt=""></p>
 <p>2、添加你想加入的Cookie数据，这里有很多种方式，可以使用excel表格、从数据库读取（如果做性能测试，不建议使用，读取会影响性能结果）、直接添加数据（不从外界获取数据），在这里我们使用直接添加数据：右侧DataSource-选择Grid，左侧添加参数与数值：</p>
 <p><img src="http://i.imgur.com/EOlj5EV.jpg" alt=""></p>
-<p><strong>第三部分：Header参数化</strong><br>1、在Request中输入参数（取DataSource中数据），注意，这里需要自己手动输入，不可进行填写：</p>
-<p><img src="http://i.imgur.com/eMo8a2x.png" alt=""></p>
+<p><strong>第三部分：Header参数化</strong><br>1、在Request中输入参数（取DataSource中数据），注意，这里需要自己手动输入(${DataSource#Cookie})，不可进行填写：</p>
+<p><img src="http://i.imgur.com/HFoT2Vh.png" alt=""></p>
 <p>2、最后添加循环，使Cookie循环取DataSource中数据-TestCase-AddStep-添加DataSource Loop：</p>
 <p><img src="http://i.imgur.com/YTpWsi0.png" alt=""></p>
 <p>3、设置DataSource Loop：</p>
@@ -168,6 +168,13 @@
 	
 <nav class="article-nav clearfix">
  
+ <div class="prev" >
+ <a href="/2016/12/29/selenium-Grid-Remote实例/" title="selenium+Grid Remote实例与谷歌运行报错分析">
+  <span>
+  selenium+Grid Remote实例与谷歌运行报错分析</span>
+</a>
+</div>
+
 
 <div class="next">
 <a href="/2016/11/07/性能测试-使用SoupUI进行压测/"  title="性能测试-使用SoupUI进行压测">
@@ -227,35 +234,11 @@
 		<ul class="clearfix">
 		
 			
-				<li><a href="/tags/windows-hexo-github/" title="windows,hexo,github">windows,hexo,github<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/压力测试，SoupUI-Header参数化-登录Cookie参数化/" title="压力测试，SoupUI,Header参数化,登录Cookie参数化">压力测试，SoupUI,Header参数化,登录Cookie参数化<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/SoapUi-性能测试-安装与使用/" title="SoapUi,性能测试,安装与使用">SoapUi,性能测试,安装与使用<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/IBM-Security-跨站点脚本编制（XSS）/" title="IBM Security,跨站点脚本编制（XSS）">IBM Security,跨站点脚本编制（XSS）<sup>1</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/简介，环境/" title="简介，环境">简介，环境<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/SoapUi-接口测试-安装与使用/" title="SoapUi,接口测试,安装与使用">SoapUi,接口测试,安装与使用<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/加减乘除、运算器、equals-与-区别/" title="加减乘除、运算器、equals()与==区别">加减乘除、运算器、equals()与==区别<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/FIND-IN-SET-in/" title="FIND_IN_SET(),in()">FIND_IN_SET(),in()<sup>1</sup></a></li>
+				<li><a href="/tags/selenium-gird-remote-谷歌运行报错-请停用以开发者模式运行的扩展程序/" title="selenium,gird,remote,谷歌运行报错,请停用以开发者模式运行的扩展程序">selenium,gird,remote,谷歌运行报错,请停用以开发者模式运行的扩展程序<sup>1</sup></a></li>
 			
 		
 			
@@ -263,7 +246,35 @@
 			
 		
 			
+				<li><a href="/tags/IBM-Security-跨站点脚本编制（XSS）/" title="IBM Security,跨站点脚本编制（XSS）">IBM Security,跨站点脚本编制（XSS）<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/FIND-IN-SET-in/" title="FIND_IN_SET(),in()">FIND_IN_SET(),in()<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/压力测试，SoupUI-Header参数化-登录Cookie参数化/" title="压力测试，SoupUI,Header参数化,登录Cookie参数化">压力测试，SoupUI,Header参数化,登录Cookie参数化<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/windows-hexo-github/" title="windows,hexo,github">windows,hexo,github<sup>1</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/注释、快捷键/" title="注释、快捷键">注释、快捷键<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/加减乘除、运算器、equals-与-区别/" title="加减乘除、运算器、equals()与==区别">加减乘除、运算器、equals()与==区别<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/SoapUi-接口测试-安装与使用/" title="SoapUi,接口测试,安装与使用">SoapUi,接口测试,安装与使用<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/SoapUi-性能测试-安装与使用/" title="SoapUi,性能测试,安装与使用">SoapUi,性能测试,安装与使用<sup>1</sup></a></li>
 			
 		
 		</ul>
