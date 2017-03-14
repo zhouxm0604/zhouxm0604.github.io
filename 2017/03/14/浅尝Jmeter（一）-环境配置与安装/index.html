@@ -4,81 +4,84 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>性能测试-使用SoupUI进行压测 | 小梦的博客</title>
+    <title>浅尝Jmeter（一） | 小梦的博客</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Amiee Zhou">
     
 
     
-    <meta name="description" content="第一部分：调通接口
-此部分，请参考上一篇文章，《接口测试-SoapUI安装与使用》
+    <meta name="description" content="第一部分：安装JAVA环境
+使用Jmeter,首先需要安装JAVA环境,且JMeter要求充分满足JVM1.3或更高：
 
-如上图，表示这个接口已跑通，且得到游戏帐号信息，返回code为200。
-第二部分：创建一个压力测试
-1、对应接口-右键-Generate（生成） TestSuite
+安装jdk；
 
-2、勾选压测默认数据选项：
+安装jre；
 
-3、生成如图所示压测项目：
-
-4、跑通接口后，设置断言：
-打开Request后，打开左下角断言：
+安装jdk后配置环境变量：
 
 
-这里介绍两种设">
+JAVA_HOME 变量
+Path 变量
+CLASSPATH 变量
+
+验证是否配置成功：
+
+运行cmd 输入 java -version
+
+第二部分：Jmeter可运行环境
+Unix(Solaris，Linux，e">
 <meta property="og:type" content="article">
-<meta property="og:title" content="性能测试-使用SoupUI进行压测">
-<meta property="og:url" content="http://yoursite.com/2016/11/07/性能测试-使用SoupUI进行压测/index.html">
+<meta property="og:title" content="浅尝Jmeter（一）">
+<meta property="og:url" content="http://yoursite.com/2017/03/14/浅尝Jmeter（一）-环境配置与安装/index.html">
 <meta property="og:site_name" content="小梦的博客">
-<meta property="og:description" content="第一部分：调通接口
-此部分，请参考上一篇文章，《接口测试-SoapUI安装与使用》
+<meta property="og:description" content="第一部分：安装JAVA环境
+使用Jmeter,首先需要安装JAVA环境,且JMeter要求充分满足JVM1.3或更高：
 
-如上图，表示这个接口已跑通，且得到游戏帐号信息，返回code为200。
-第二部分：创建一个压力测试
-1、对应接口-右键-Generate（生成） TestSuite
+安装jdk；
 
-2、勾选压测默认数据选项：
+安装jre；
 
-3、生成如图所示压测项目：
-
-4、跑通接口后，设置断言：
-打开Request后，打开左下角断言：
+安装jdk后配置环境变量：
 
 
-这里介绍两种设">
-<meta property="og:image" content="http://i.imgur.com/PDr7AGm.png">
-<meta property="og:image" content="http://i.imgur.com/W53cR3t.png">
-<meta property="og:image" content="http://i.imgur.com/gS4gQq7.png">
-<meta property="og:image" content="http://i.imgur.com/ZJyeil9.png">
-<meta property="og:image" content="http://i.imgur.com/mtaDsOb.png">
-<meta property="og:image" content="http://i.imgur.com/etkHuBh.png">
-<meta property="og:image" content="http://i.imgur.com/Ewmiluh.png">
-<meta property="og:image" content="http://i.imgur.com/qvqtmbA.png">
-<meta property="og:image" content="http://i.imgur.com/lY2lJCY.png">
-<meta property="og:image" content="http://i.imgur.com/MadF2mi.png">
-<meta property="og:image" content="http://i.imgur.com/1VkmecA.png">
-<meta property="og:image" content="http://i.imgur.com/zt6h3nY.png">
-<meta property="og:updated_time" content="2016-11-08T06:43:15.000Z">
+JAVA_HOME 变量
+Path 变量
+CLASSPATH 变量
+
+验证是否配置成功：
+
+运行cmd 输入 java -version
+
+第二部分：Jmeter可运行环境
+Unix(Solaris，Linux，e">
+<meta property="og:image" content="http://i.imgur.com/2Sy3Yck.png">
+<meta property="og:image" content="http://i.imgur.com/JyN2br8.png">
+<meta property="og:image" content="http://i.imgur.com/PRugDcn.jpg">
+<meta property="og:updated_time" content="2017-03-14T13:51:06.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="性能测试-使用SoupUI进行压测">
-<meta name="twitter:description" content="第一部分：调通接口
-此部分，请参考上一篇文章，《接口测试-SoapUI安装与使用》
+<meta name="twitter:title" content="浅尝Jmeter（一）">
+<meta name="twitter:description" content="第一部分：安装JAVA环境
+使用Jmeter,首先需要安装JAVA环境,且JMeter要求充分满足JVM1.3或更高：
 
-如上图，表示这个接口已跑通，且得到游戏帐号信息，返回code为200。
-第二部分：创建一个压力测试
-1、对应接口-右键-Generate（生成） TestSuite
+安装jdk；
 
-2、勾选压测默认数据选项：
+安装jre；
 
-3、生成如图所示压测项目：
-
-4、跑通接口后，设置断言：
-打开Request后，打开左下角断言：
+安装jdk后配置环境变量：
 
 
-这里介绍两种设">
-<meta name="twitter:image" content="http://i.imgur.com/PDr7AGm.png">
+JAVA_HOME 变量
+Path 变量
+CLASSPATH 变量
+
+验证是否配置成功：
+
+运行cmd 输入 java -version
+
+第二部分：Jmeter可运行环境
+Unix(Solaris，Linux，e">
+<meta name="twitter:image" content="http://i.imgur.com/2Sy3Yck.png">
 
     
     <link rel="alternative" href="atom.xml" title="小梦的博客" type="application/atom+xml">
@@ -138,14 +141,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2016/11/07/性能测试-使用SoupUI进行压测/" title="性能测试-使用SoupUI进行压测" itemprop="url">性能测试-使用SoupUI进行压测</a>
+      <a href="/2017/03/14/浅尝Jmeter（一）-环境配置与安装/" title="浅尝Jmeter（一）" itemprop="url">浅尝Jmeter（一）</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="Amiee Zhou" target="_blank" itemprop="author">Amiee Zhou</a>
 		
   <p class="article-time">
-    <time datetime="2016-11-07T12:18:17.000Z" itemprop="datePublished"> 发表于 2016-11-07</time>
+    <time datetime="2017-03-14T13:22:49.000Z" itemprop="datePublished"> 发表于 2017-03-14</time>
     
   </p>
 </header>
@@ -158,38 +161,44 @@
 		
 		</div>
 		
-		<p><strong>第一部分：调通接口</strong></p>
-<p>此部分，请参考上一篇文章，《接口测试-SoapUI安装与使用》</p>
-<p><img src="http://i.imgur.com/PDr7AGm.png" alt=""></p>
-<p>如上图，表示这个接口已跑通，且得到游戏帐号信息，返回code为200。</p>
-<p><strong>第二部分：创建一个压力测试</strong></p>
-<p>1、对应接口-右键-Generate（生成） TestSuite</p>
-<p><img src="http://i.imgur.com/W53cR3t.png" alt=""></p>
-<p>2、勾选压测默认数据选项：</p>
-<p><img src="http://i.imgur.com/gS4gQq7.png" alt=""></p>
-<p>3、生成如图所示压测项目：</p>
-<p><img src="http://i.imgur.com/ZJyeil9.png" alt=""></p>
-<p>4、跑通接口后，设置断言：</p>
-<p>打开Request后，打开左下角断言：</p>
-<p><img src="http://i.imgur.com/mtaDsOb.png" alt=""></p>
-<p><img src="http://i.imgur.com/etkHuBh.png" alt=""></p>
-<p>这里介绍两种设置断言方式：</p>
-<p>第一种：response的节点内容匹配</p>
-<p><img src="http://i.imgur.com/Ewmiluh.png" alt=""></p>
-<p>因为我们这个返回jason包含code2000，因此我们选择response的节点内容匹配2000</p>
-<p><img src="http://i.imgur.com/qvqtmbA.png" alt=""></p>
-<p>第二种，xml路径内容匹配</p>
-<p>在我们运行接口后，跳转到另一个页面，此时，我们可以使用xml路径内容匹配的方式来设置断言：</p>
-<p>方法是，在运行接口后，会跳转页面，此时我们打开断言，选择Property Content，MessageCont Assertion；</p>
-<p><img src="http://i.imgur.com/lY2lJCY.png" alt=""></p>
-<p>当再次运行，跳转页面时就会变成绿色啦</p>
-<p>5、设置断言，运行接口，返回正确，会显示绿色：</p>
-<p><img src="http://i.imgur.com/MadF2mi.png" alt=""></p>
-<p>6、打开LoadTest，设置压测数据，点击左上角运行，就可以进行压测了</p>
-<p><img src="http://i.imgur.com/1VkmecA.png" alt=""></p>
-<p>SoapUI使用线程,取A数据并发跑10条(这里是线程,毫秒上并相同,不是真正的完全并发),再取B数据并发跑10条,日志如下：</p>
-<p><img src="http://i.imgur.com/zt6h3nY.png" alt=""></p>
-<p>7、设置数据部分，后续把设置数据部分与结果分析部分一起说明。</p>
+		<p><strong>第一部分：安装JAVA环境</strong></p>
+<p>使用Jmeter,首先需要安装JAVA环境,且JMeter要求充分满足JVM1.3或更高：</p>
+<ol>
+<li><p>安装jdk；</p>
+</li>
+<li><p>安装jre；</p>
+</li>
+<li><p>安装jdk后配置环境变量：</p>
+</li>
+</ol>
+<p>JAVA_HOME 变量</p>
+<p>Path 变量</p>
+<p>CLASSPATH 变量</p>
+<ol>
+<li>验证是否配置成功：</li>
+</ol>
+<p>运行cmd 输入 java -version</p>
+<p><img src="http://i.imgur.com/2Sy3Yck.png" alt=""></p>
+<p><strong>第二部分：Jmeter可运行环境</strong></p>
+<p>Unix(Solaris，Linux，etc)</p>
+<p>Windows(98，NT，2000，XP)</p>
+<p>Open VMS Alpha 7.3+</p>
+<p><strong>第三部分：Jmeter安装</strong></p>
+<ol>
+<li><p>安装jdk并配置环境变量，jdk-1_5_0_12-windows-i586-p.exe;</p>
+</li>
+<li><p>安装Jmeter：</p>
+</li>
+</ol>
+<p>a. 解压jakarta-jmeter文件至c盘，本文解压至D:\jmeter目录下。</p>
+<p>b. 修改环境变量：</p>
+<p>JMETER_HOME：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">D:\ jmeter;</span><br></pre></td></tr></table></figure></p>
+<p>CLASSPATH：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%JMETER_HOME%\lib\ext\ApacheJMeter_core.jar;%JMETER_HOME%\lib\jorphan.jar;%JMETER_HOME%\lib\logkit-1.2.jar;</span><br></pre></td></tr></table></figure></p>
+<p>c. 检查jmeter安装是否OK</p>
+<p>具体是：进入jmeter目录下的bin文件夹，点击jmeter.bat，查看页面显示，如果能显示jmeter操作页面则安装成功。</p>
+<p>如下图：</p>
+<p><img src="http://i.imgur.com/JyN2br8.png" alt=""></p>
+<p><img src="http://i.imgur.com/PRugDcn.jpg" alt=""></p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -198,7 +207,7 @@
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/SoapUi-性能测试-安装与使用/">SoapUi,性能测试,安装与使用</a>
+  <span></span> <a href="/tags/接口测试-压力测试-安装与使用/">接口测试,压力测试,安装与使用</a>
   </div>
 
 </div>
@@ -212,17 +221,10 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2016/11/07/压力测试-Header参数化/" title="压力测试-SoupUI-Header参数化">
-  <span>
-  压力测试-SoupUI-Header参数化</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2016/11/07/接口测试-SoapUi安装与使用/"  title="接口测试-SoapUi安装与使用">
- <span>接口测试-SoapUi安装与使用
+<a href="/2016/12/29/selenium-Grid-Remote实例/"  title="Selenium+Grid Remote实例与谷歌运行报错分析">
+ <span>Selenium+Grid Remote实例与谷歌运行报错分析
 </span>
 </a>
 </div>
