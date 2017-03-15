@@ -4,73 +4,84 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>windows-hexo-github搭建个人博客步骤及常见问题 | 小梦的博客</title>
+    <title>浅尝Jmeter(一)环境配置与安装 | 小梦的博客</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Amiee Zhou">
     
 
     
-    <meta name="description" content="小白花了两天时间搭建了自己的独立博客，进了很多坑，在这里分享一下，愿大家少走弯路。
-特别鸣谢Code_Y,我也是跟着他的教程一点点学的。
-1. 环境安装：
-下载安装软件：
-Node.js
-我使用的版本是：
+    <meta name="description" content="第一部分：安装JAVA环境
+使用Jmeter,首先需要安装JAVA环境,且JMeter要求充分满足JVM1.3或更高：
 
-这里说明一下：版本过低时，可能会报错，因此建议下载最新版本。
-GitHub for Windows
-安装好后，桌面会出现两个小图标
-2. 测试SSH Key
-在桌面或开始菜单找到Git She">
+安装jdk；
+
+安装jre；
+
+安装jdk后配置环境变量：
+
+
+JAVA_HOME 变量
+Path 变量
+CLASSPATH 变量
+
+验证是否配置成功：
+
+运行cmd 输入 java -version
+
+第二部分：Jmeter可运行环境
+Unix(Solaris，Linux，e">
 <meta property="og:type" content="article">
-<meta property="og:title" content="windows-hexo-github搭建个人博客步骤及常见问题">
-<meta property="og:url" content="http://yoursite.com/2016/05/17/windows-hexo-github搭建个人博客步骤及常见问题-1/index.html">
+<meta property="og:title" content="浅尝Jmeter(一)环境配置与安装">
+<meta property="og:url" content="http://yoursite.com/2017/03/14/浅尝Jmeter(一)-环境配置与安装/index.html">
 <meta property="og:site_name" content="小梦的博客">
-<meta property="og:description" content="小白花了两天时间搭建了自己的独立博客，进了很多坑，在这里分享一下，愿大家少走弯路。
-特别鸣谢Code_Y,我也是跟着他的教程一点点学的。
-1. 环境安装：
-下载安装软件：
-Node.js
-我使用的版本是：
+<meta property="og:description" content="第一部分：安装JAVA环境
+使用Jmeter,首先需要安装JAVA环境,且JMeter要求充分满足JVM1.3或更高：
 
-这里说明一下：版本过低时，可能会报错，因此建议下载最新版本。
-GitHub for Windows
-安装好后，桌面会出现两个小图标
-2. 测试SSH Key
-在桌面或开始菜单找到Git She">
-<meta property="og:image" content="http://i.imgur.com/DgF1X6h.png">
-<meta property="og:image" content="http://i.imgur.com/ttu17Oo.png">
-<meta property="og:image" content="http://i.imgur.com/plm86On.png">
-<meta property="og:image" content="http://i.imgur.com/ogPhWly.png">
-<meta property="og:image" content="http://i.imgur.com/dkm57S6.png">
-<meta property="og:image" content="http://i.imgur.com/0LWwgtp.png">
-<meta property="og:image" content="http://i.imgur.com/ZNYtibS.png">
-<meta property="og:image" content="http://i.imgur.com/drUSse5.jpg">
-<meta property="og:image" content="http://i.imgur.com/LF3EFip.png">
-<meta property="og:image" content="http://i.imgur.com/GwrECY3.png">
-<meta property="og:image" content="http://i.imgur.com/HBPvztW.png">
-<meta property="og:image" content="http://i.imgur.com/dDK4HGi.jpg">
-<meta property="og:image" content="http://i.imgur.com/i6cBFcj.jpg">
-<meta property="og:image" content="http://i.imgur.com/ETOEgZ9.png">
-<meta property="og:image" content="http://i.imgur.com/DU6nQEi.jpg">
-<meta property="og:image" content="http://i.imgur.com/zR7dUn7.jpg">
-<meta property="og:updated_time" content="2016-10-27T10:27:02.000Z">
+安装jdk；
+
+安装jre；
+
+安装jdk后配置环境变量：
+
+
+JAVA_HOME 变量
+Path 变量
+CLASSPATH 变量
+
+验证是否配置成功：
+
+运行cmd 输入 java -version
+
+第二部分：Jmeter可运行环境
+Unix(Solaris，Linux，e">
+<meta property="og:image" content="http://i.imgur.com/2Sy3Yck.png">
+<meta property="og:image" content="http://i.imgur.com/JyN2br8.png">
+<meta property="og:image" content="http://i.imgur.com/PRugDcn.jpg">
+<meta property="og:updated_time" content="2017-03-15T11:31:46.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="windows-hexo-github搭建个人博客步骤及常见问题">
-<meta name="twitter:description" content="小白花了两天时间搭建了自己的独立博客，进了很多坑，在这里分享一下，愿大家少走弯路。
-特别鸣谢Code_Y,我也是跟着他的教程一点点学的。
-1. 环境安装：
-下载安装软件：
-Node.js
-我使用的版本是：
+<meta name="twitter:title" content="浅尝Jmeter(一)环境配置与安装">
+<meta name="twitter:description" content="第一部分：安装JAVA环境
+使用Jmeter,首先需要安装JAVA环境,且JMeter要求充分满足JVM1.3或更高：
 
-这里说明一下：版本过低时，可能会报错，因此建议下载最新版本。
-GitHub for Windows
-安装好后，桌面会出现两个小图标
-2. 测试SSH Key
-在桌面或开始菜单找到Git She">
-<meta name="twitter:image" content="http://i.imgur.com/DgF1X6h.png">
+安装jdk；
+
+安装jre；
+
+安装jdk后配置环境变量：
+
+
+JAVA_HOME 变量
+Path 变量
+CLASSPATH 变量
+
+验证是否配置成功：
+
+运行cmd 输入 java -version
+
+第二部分：Jmeter可运行环境
+Unix(Solaris，Linux，e">
+<meta name="twitter:image" content="http://i.imgur.com/2Sy3Yck.png">
 
     
     <link rel="alternative" href="atom.xml" title="小梦的博客" type="application/atom+xml">
@@ -130,14 +141,14 @@ GitHub for Windows
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2016/05/17/windows-hexo-github搭建个人博客步骤及常见问题-1/" title="windows-hexo-github搭建个人博客步骤及常见问题" itemprop="url">windows-hexo-github搭建个人博客步骤及常见问题</a>
+      <a href="/2017/03/14/浅尝Jmeter(一)-环境配置与安装/" title="浅尝Jmeter(一)环境配置与安装" itemprop="url">浅尝Jmeter(一)环境配置与安装</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="Amiee Zhou" target="_blank" itemprop="author">Amiee Zhou</a>
 		
   <p class="article-time">
-    <time datetime="2016-05-17T07:38:52.000Z" itemprop="datePublished"> 发表于 2016-05-17</time>
+    <time datetime="2017-03-14T13:22:49.000Z" itemprop="datePublished"> 发表于 2017-03-14</time>
     
   </p>
 </header>
@@ -150,87 +161,44 @@ GitHub for Windows
 		
 		</div>
 		
-		<p>小白花了两天时间搭建了自己的独立博客，进了很多坑，在这里分享一下，愿大家少走弯路。</p>
-<p>特别鸣谢<a href="http://www.jianshu.com/p/985d07d88ef4" target="_blank" rel="external">Code_Y</a>,我也是跟着他的教程一点点学的。</p>
-<p><strong>1. 环境安装：</strong></p>
-<p>下载安装软件：</p>
-<p><strong><a href="https://nodejs.org/en/" target="_blank" rel="external">Node.js</a></strong></p>
-<p>我使用的版本是：</p>
-<p><img src="http://i.imgur.com/DgF1X6h.png" alt=""></p>
-<p>这里说明一下：<br>版本过低时，可能会报错，因此建议下载最新版本。</p>
-<p><strong><a href="https://desktop.github.com/" target="_blank" rel="external">GitHub for Windows</a></strong></p>
-<p>安装好后，桌面会出现两个小图标<br><img src="http://i.imgur.com/ttu17Oo.png" alt=""></p>
-<p><strong>2. 测试SSH Key</strong></p>
-<p>在桌面或开始菜单找到Git Shell<br>如上图显示；</p>
-<p>等待打开后输入一下命令</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
-<p>如图：</p>
-<p><img src="http://i.imgur.com/plm86On.png" alt=""></p>
-<p>如果出现问题，可以卸载GitHub for Windows 客户端，重新安装一遍</p>
-<p><strong>3. 注册Github</strong></p>
+		<p><strong>第一部分：安装JAVA环境</strong></p>
+<p>使用Jmeter,首先需要安装JAVA环境,且JMeter要求充分满足JVM1.3或更高：</p>
 <ol>
-<li>访问官网：<a href="https://www.github.com" target="_blank" rel="external">https://www.github.com</a></li>
+<li><p>安装jdk；</p>
+</li>
+<li><p>安装jre；</p>
+</li>
+<li><p>安装jdk后配置环境变量：</p>
+</li>
 </ol>
-<p>ps:这里要注意一点，因为博客名称要与用户名一致，所以注册填写用户名的时候最好先想一下博客的名称；<br>例如，我的博客想用这个地址<a href="http://zhouxm0604.github.io/" title="博客地址" target="_blank" rel="external">http://zhouxm0604.github.io/</a>，那么申请的用户名就应该是zhouxm0604，只是个人经验，不一定对。</p>
-<p>如图：</p>
-<p><img src="http://i.imgur.com/ogPhWly.png" alt=""></p>
-<p>点击sign up或者直接在下侧填写，申请成功后验证邮箱并登录（点击sign in）。</p>
-<p><strong>4. 在github上创建仓储：</strong></p>
-<p>登录后-点击右上角new repository创建仓储，创建仓储名称填写yourname.github.io，<br>如图：</p>
-<p><img src="http://i.imgur.com/dkm57S6.png" alt=""></p>
-<p>例如：仓储名称，我就写的是zhouxm0604.github.io</p>
-<p><strong>5. 使用Hexo创建博客框架</strong></p>
-<p><strong>a. Hexo安装</strong></p>
-<p>打开Git Shell<br>启动后一次输入一下命令:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd /</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g 或 npm install -g hexo</span><br></pre></td></tr></table></figure>
-<p>提示：cd / 作用是返回根目录，Git Shell 默认装在 C盘，启动时默认路径为 C:\Users\xxx(用户名)\Documents\GitHub，输入 cd / 命令后就返回到了 C盘根目录下。</p>
-<p>安装之后可以输入</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo -v</span><br></pre></td></tr></table></figure>
-<p>检查一下是否安装成功</p>
-<p><img src="http://i.imgur.com/0LWwgtp.png" alt=""></p>
-<p>我装的是3.2.0的</p>
-<p>b. Hexo部署</p>
-<p>打开Git Shell</p>
-<p>启动后输入一下命令</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd /</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init hexo</span><br></pre></td></tr></table></figure>
-<p>第一次报错</p>
-<p><img src="http://i.imgur.com/ZNYtibS.png" alt=""></p>
-<p>升级了node的版本后，再次进行部署，可以正常部署<br><img src="http://i.imgur.com/drUSse5.jpg" alt=""></p>
-<p>使用命令，安装依赖文件（注意在hexo目录下安装）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
-<p>经过以上两个方法的任意一种之后，Hexo 会自动在目标文件夹建立博客网站所需要的所有文件。<br>此时可以通过输入以下命令在本地进行预览：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo generate (可以简写成: hexo g)</span><br></pre></td></tr></table></figure>
-<p>如图：<br><img src="http://i.imgur.com/LF3EFip.png" alt=""></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure>
-<p>如图：</p>
-<p><img src="http://i.imgur.com/GwrECY3.png" alt=""></p>
-<p>此时打开浏览器，在浏览器地址栏输入 <a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a> （默认端口为4000）便可以看到最原始的博客了</p>
-<p>如图：</p>
-<p><img src="http://i.imgur.com/HBPvztW.png" alt=""></p>
-<p><strong>6. 将本地文件部署到GitHub</strong></p>
-<p>修改 Hexo 中的 _config.yml 文件<br>用编辑器打开<br><img src="http://i.imgur.com/dDK4HGi.jpg" alt=""></p>
-<p>找到其中的 deploy 标签，改成如图所示，并保存：<br><img src="http://i.imgur.com/i6cBFcj.jpg" alt=""></p>
-<p><strong>这里一定要注意格式：</strong></p>
-<p><em>冒号是半角英文，并且顶头空一格，冒号后面空一格，最后不空格</em></p>
-<p><em>这边格式不对，也会各种报错。</em></p>
-<p>其中 branch 选项可以填写 master 或 gh-pages。<br>如果你是为一个项目制作网站，那么需要把 branch 设置为 gh-pages 。若要绑定自定义域名也可以参考Hexo 或 Github Page 的帮助文档，制作一个 CNAME 文件。</p>
-<p>hexo3.0以上版本需要单独安装Git</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-<p>将其deploy到仓储中</p>
-<p>hexo clean<br>hexo generate（简写g）<br>hexo deploy （简写d）</p>
-<p>如果此时依然报错</p>
-<p><img src="http://i.imgur.com/ETOEgZ9.png" alt=""></p>
-<p>或者是其他错误</p>
-<p>查看环境变量path中是否加入git</p>
-<p>方法：cmd-path</p>
-<p><img src="http://i.imgur.com/DU6nQEi.jpg" alt=""></p>
-<p>如果没有添加，打开hexo中git的位置，复制，粘贴加入环境变量中去</p>
-<p>再次执行命令：</p>
-<p>hexo clean<br>hexo generate（简写g）<br>hexo deploy （简写d）</p>
-<p><img src="http://i.imgur.com/zR7dUn7.jpg" alt=""></p>
-<p>恭喜，到这一步，个人博客就已经部署到 GitHub 上了，此时通过 your_user_name.github.io（即你那个仓库的名称，形如：”你的 GitHub 用户名”.github.io） 就可以看到你的个人博客了。<br>使用 hexo new “文章名称” 可以进行新建文章</p>
+<p>JAVA_HOME 变量</p>
+<p>Path 变量</p>
+<p>CLASSPATH 变量</p>
+<ol>
+<li>验证是否配置成功：</li>
+</ol>
+<p>运行cmd 输入 java -version</p>
+<p><img src="http://i.imgur.com/2Sy3Yck.png" alt=""></p>
+<p><strong>第二部分：Jmeter可运行环境</strong></p>
+<p>Unix(Solaris，Linux，etc)</p>
+<p>Windows(98，NT，2000，XP)</p>
+<p>Open VMS Alpha 7.3+</p>
+<p><strong>第三部分：Jmeter安装</strong></p>
+<ol>
+<li><p>安装jdk并配置环境变量，jdk-1_5_0_12-windows-i586-p.exe;</p>
+</li>
+<li><p>安装Jmeter：</p>
+</li>
+</ol>
+<p>a. 解压jakarta-jmeter文件至c盘，本文解压至D:\jmeter目录下。</p>
+<p>b. 修改环境变量：</p>
+<p>JMETER_HOME：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">D:\ jmeter;</span><br></pre></td></tr></table></figure></p>
+<p>CLASSPATH：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%JMETER_HOME%\lib\ext\ApacheJMeter_core.jar;%JMETER_HOME%\lib\jorphan.jar;%JMETER_HOME%\lib\logkit-1.2.jar;</span><br></pre></td></tr></table></figure></p>
+<p>c. 检查jmeter安装是否OK</p>
+<p>具体是：进入jmeter目录下的bin文件夹，点击jmeter.bat，查看页面显示，如果能显示jmeter操作页面则安装成功。</p>
+<p>如下图：</p>
+<p><img src="http://i.imgur.com/JyN2br8.png" alt=""></p>
+<p><img src="http://i.imgur.com/PRugDcn.jpg" alt=""></p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -239,7 +207,7 @@ GitHub for Windows
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/windows-hexo-github/">windows,hexo,github</a>
+  <span></span> <a href="/tags/接口测试-压力测试-安装与使用/">接口测试,压力测试,安装与使用</a>
   </div>
 
 </div>
@@ -254,16 +222,16 @@ GitHub for Windows
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/2016/05/18/Mysql查询用逗号分隔的字段-字符串函数FIND-IN-SET/" title="Mysql查询用逗号分隔的字段-字符串函数FIND_IN_SET()">
+ <a href="/2017/03/14/浅尝Jmeter(二)-api压力测试/" title="浅尝Jmeter(二)-api压力测试">
   <span>
-  Mysql查询用逗号分隔的字段-字符串函数FIND_IN_SET()</span>
+  浅尝Jmeter(二)-api压力测试</span>
 </a>
 </div>
 
 
 <div class="next">
-<a href="/2016/05/10/hello-world/"  title="Hello World">
- <span>Hello World
+<a href="/2016/12/29/selenium-Grid-Remote实例/"  title="Selenium+Grid Remote实例与谷歌运行报错分析">
+ <span>Selenium+Grid Remote实例与谷歌运行报错分析
 </span>
 </a>
 </div>

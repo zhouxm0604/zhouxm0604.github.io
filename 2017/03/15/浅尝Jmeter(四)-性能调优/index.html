@@ -4,77 +4,55 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>浅尝Jmeter(二)-api压力测试 | 小梦的博客</title>
+    <title>浅尝Jmeter(四)-性能调优 | 小梦的博客</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Amiee Zhou">
     
 
     
-    <meta name="description" content="最近公司的某个项目，一到周末，人多的时候，就会出问题，据研发分析，是访问量大的时候，sql慢查询，数据库扛不住的问题，为了配合测试，今天使用Jmeter做了一下接口压测。
-第一部分：需要测试接口
-看了一下，自己要测试的接口，是http请求，get或post方式都可以。
-大概接口文档截图，如图：
+    <meta name="description" content="第一部分 问题说明
+1.压测 300线程，5s内启动，5个循环（1000条不同的uid）时 压测,数据如下：
 
-第二部分：压测步骤
+报错信息如下：
 
-第一步：调通接口，添加一个线程组：
-
-
-并且设置并发数为1
-
-2.第二步：添加h">
+报错率：7.00%
+吞吐率(默认情况下表示每秒完成的请求数)：47.2/sec
+根据研发查问题，发现报错是因为慢查询导致的，因此做了sql语句优化；
+2.优化后，300线程，5s内启动，5个循环（1000条不同的uid）时 压测，发现错误率为0；
+3.于是增加线程数量，">
 <meta property="og:type" content="article">
-<meta property="og:title" content="浅尝Jmeter(二)-api压力测试">
-<meta property="og:url" content="http://yoursite.com/2017/03/14/浅尝Jmeter（二）-api压力测试/index.html">
+<meta property="og:title" content="浅尝Jmeter(四)-性能调优">
+<meta property="og:url" content="http://yoursite.com/2017/03/15/浅尝Jmeter(四)-性能调优/index.html">
 <meta property="og:site_name" content="小梦的博客">
-<meta property="og:description" content="最近公司的某个项目，一到周末，人多的时候，就会出问题，据研发分析，是访问量大的时候，sql慢查询，数据库扛不住的问题，为了配合测试，今天使用Jmeter做了一下接口压测。
-第一部分：需要测试接口
-看了一下，自己要测试的接口，是http请求，get或post方式都可以。
-大概接口文档截图，如图：
+<meta property="og:description" content="第一部分 问题说明
+1.压测 300线程，5s内启动，5个循环（1000条不同的uid）时 压测,数据如下：
 
-第二部分：压测步骤
+报错信息如下：
 
-第一步：调通接口，添加一个线程组：
-
-
-并且设置并发数为1
-
-2.第二步：添加h">
-<meta property="og:image" content="http://i.imgur.com/XLt9tTw.png">
-<meta property="og:image" content="http://i.imgur.com/qQvIEGA.png">
-<meta property="og:image" content="http://i.imgur.com/H4gObA9.png">
-<meta property="og:image" content="http://i.imgur.com/G0fXiA4.png">
-<meta property="og:image" content="http://i.imgur.com/NN50rAv.jpg">
-<meta property="og:image" content="http://i.imgur.com/3KtXoGE.png">
-<meta property="og:image" content="http://i.imgur.com/UOuS2IF.png">
-<meta property="og:image" content="http://i.imgur.com/pJkE0Ue.jpg">
-<meta property="og:image" content="http://i.imgur.com/mdc51T2.jpg">
-<meta property="og:image" content="http://i.imgur.com/WbJZRst.png">
-<meta property="og:image" content="http://i.imgur.com/Iy3vpab.png">
-<meta property="og:image" content="http://i.imgur.com/20HsluN.png">
-<meta property="og:image" content="http://i.imgur.com/5bAaaji.png">
-<meta property="og:image" content="http://i.imgur.com/jKZmEvs.png">
-<meta property="og:image" content="http://i.imgur.com/cg16hkY.png">
-<meta property="og:image" content="http://i.imgur.com/dwa4Cm4.png">
-<meta property="og:image" content="http://i.imgur.com/O2Bknno.png">
-<meta property="og:updated_time" content="2017-03-15T11:26:08.000Z">
+报错率：7.00%
+吞吐率(默认情况下表示每秒完成的请求数)：47.2/sec
+根据研发查问题，发现报错是因为慢查询导致的，因此做了sql语句优化；
+2.优化后，300线程，5s内启动，5个循环（1000条不同的uid）时 压测，发现错误率为0；
+3.于是增加线程数量，">
+<meta property="og:image" content="http://i.imgur.com/upBQtAx.png">
+<meta property="og:image" content="http://i.imgur.com/J6jbPov.png">
+<meta property="og:image" content="http://i.imgur.com/MepnfcE.png">
+<meta property="og:image" content="http://i.imgur.com/kclh0w7.jpg">
+<meta property="og:updated_time" content="2017-03-15T11:56:33.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="浅尝Jmeter(二)-api压力测试">
-<meta name="twitter:description" content="最近公司的某个项目，一到周末，人多的时候，就会出问题，据研发分析，是访问量大的时候，sql慢查询，数据库扛不住的问题，为了配合测试，今天使用Jmeter做了一下接口压测。
-第一部分：需要测试接口
-看了一下，自己要测试的接口，是http请求，get或post方式都可以。
-大概接口文档截图，如图：
+<meta name="twitter:title" content="浅尝Jmeter(四)-性能调优">
+<meta name="twitter:description" content="第一部分 问题说明
+1.压测 300线程，5s内启动，5个循环（1000条不同的uid）时 压测,数据如下：
 
-第二部分：压测步骤
+报错信息如下：
 
-第一步：调通接口，添加一个线程组：
-
-
-并且设置并发数为1
-
-2.第二步：添加h">
-<meta name="twitter:image" content="http://i.imgur.com/XLt9tTw.png">
+报错率：7.00%
+吞吐率(默认情况下表示每秒完成的请求数)：47.2/sec
+根据研发查问题，发现报错是因为慢查询导致的，因此做了sql语句优化；
+2.优化后，300线程，5s内启动，5个循环（1000条不同的uid）时 压测，发现错误率为0；
+3.于是增加线程数量，">
+<meta name="twitter:image" content="http://i.imgur.com/upBQtAx.png">
 
     
     <link rel="alternative" href="atom.xml" title="小梦的博客" type="application/atom+xml">
@@ -134,14 +112,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2017/03/14/浅尝Jmeter（二）-api压力测试/" title="浅尝Jmeter(二)-api压力测试" itemprop="url">浅尝Jmeter(二)-api压力测试</a>
+      <a href="/2017/03/15/浅尝Jmeter(四)-性能调优/" title="浅尝Jmeter(四)-性能调优" itemprop="url">浅尝Jmeter(四)-性能调优</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="Amiee Zhou" target="_blank" itemprop="author">Amiee Zhou</a>
 		
   <p class="article-time">
-    <time datetime="2017-03-14T15:08:49.000Z" itemprop="datePublished"> 发表于 2017-03-14</time>
+    <time datetime="2017-03-15T11:38:35.000Z" itemprop="datePublished"> 发表于 2017-03-15</time>
     
   </p>
 </header>
@@ -154,42 +132,30 @@
 		
 		</div>
 		
-		<p>最近公司的某个项目，一到周末，人多的时候，就会出问题，据研发分析，是访问量大的时候，sql慢查询，数据库扛不住的问题，为了配合测试，今天使用Jmeter做了一下接口压测。</p>
-<p><strong>第一部分：需要测试接口</strong></p>
-<p>看了一下，自己要测试的接口，是http请求，get或post方式都可以。</p>
-<p>大概接口文档截图，如图：</p>
-<p><img src="http://i.imgur.com/XLt9tTw.png" alt=""></p>
-<p><strong>第二部分：压测步骤</strong></p>
-<ol>
-<li>第一步：调通接口，添加一个线程组：</li>
-</ol>
-<p><img src="http://i.imgur.com/qQvIEGA.png" alt=""></p>
-<p>并且设置并发数为1</p>
-<p><img src="http://i.imgur.com/H4gObA9.png" alt=""></p>
-<p>2.第二步：添加http请求，输入请求地址，注意编码选择UTF-8，写入请求参数，以及设置请求方法是用post还是get</p>
-<p><img src="http://i.imgur.com/G0fXiA4.png" alt=""></p>
-<p><img src="http://i.imgur.com/NN50rAv.jpg" alt=""></p>
-<p>我这里有些参数是取的csv文件数据</p>
-<p>ps:这里注意一下跟随重定向这个参数，意思是如果http无法访问，会自动跳转到https,如图：</p>
-<p><img src="http://i.imgur.com/3KtXoGE.png" alt=""></p>
-<p>3.第三步：设置断言，我这里设置的是响应断言，响应返回包含“查询成功”</p>
-<p><img src="http://i.imgur.com/UOuS2IF.png" alt=""></p>
-<p><img src="http://i.imgur.com/pJkE0Ue.jpg" alt=""></p>
-<p>4.第四步：添加监听，聚合报告、图形结果与查看结果树</p>
-<p><img src="http://i.imgur.com/mdc51T2.jpg" alt=""></p>
-<p><img src="http://i.imgur.com/WbJZRst.png" alt=""></p>
-<p>5.运行线程组，1个并发，并查看结果：</p>
-<p><img src="http://i.imgur.com/Iy3vpab.png" alt=""></p>
-<p><img src="http://i.imgur.com/20HsluN.png" alt=""></p>
-<p>6.运行多个并发，例如100个，查看图形结果：</p>
-<p><img src="http://i.imgur.com/5bAaaji.png" alt=""></p>
-<p><img src="http://i.imgur.com/jKZmEvs.png" alt=""></p>
-<p>ps:查看结果数时，可勾选“仅日志错误”选项，方便查看错误日志，如图：</p>
-<p><img src="http://i.imgur.com/cg16hkY.png" alt=""></p>
-<p>7.当然，压测的时候，最好配合后台日志一起查看，这样方便分析问题：</p>
-<p><img src="http://i.imgur.com/dwa4Cm4.png" alt=""></p>
-<p><img src="http://i.imgur.com/O2Bknno.png" alt=""></p>
-  
+		<p><strong>第一部分 问题说明</strong></p>
+<p>1.压测 300线程，5s内启动，5个循环（1000条不同的uid）时 压测,数据如下：</p>
+<p><img src="http://i.imgur.com/upBQtAx.png" alt=""></p>
+<p>报错信息如下：</p>
+<p><img src="http://i.imgur.com/J6jbPov.png" alt=""></p>
+<p>报错率：7.00%</p>
+<p>吞吐率(默认情况下表示每秒完成的请求数)：47.2/sec</p>
+<p>根据研发查问题，发现报错是因为慢查询导致的，因此做了sql语句优化；</p>
+<p>2.优化后，300线程，5s内启动，5个循环（1000条不同的uid）时 压测，发现错误率为0；</p>
+<p>3.于是增加线程数量，500线程，5个循环（1000条不同的uid）时 压测，数据如下：</p>
+<p><img src="http://i.imgur.com/MepnfcE.png" alt=""></p>
+<p>报错率：4.52%</p>
+<p>吞吐率(默认情况下表示每秒完成的请求数)：58.5/sec</p>
+<p>情况依然不太好，于是让研发继续想办法</p>
+<p>4.最后跟产品商量，把部分功能下线，并把线上数据删除，500线程，5个循环（1000条不同的uid）时 压测，结果如下：</p>
+<p><img src="http://i.imgur.com/kclh0w7.jpg" alt=""></p>
+<p>报错率：0.00%</p>
+<p>吞吐率(默认情况下表示每秒完成的请求数)：231.0/sec</p>
+<p>这个结果最后经大家讨论可以接受，明天过下功能，打算上线，</p>
+<p>总结一下：</p>
+<p>sql优化 后，数据库5W多条数据情况下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">从300并发，5s内启动，7.2%的报错，</span><br><span class="line"></span><br><span class="line">优化到</span><br><span class="line"></span><br><span class="line">300并发，5s内启动，无报错，</span><br><span class="line"></span><br><span class="line">500并发，5s内，启动，报错4.52%</span><br></pre></td></tr></table></figure>
+<p>删掉数据库数据 优化后:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">从500并发，5s内，启动，报错4.52%</span><br><span class="line"></span><br><span class="line">优化到</span><br><span class="line"></span><br><span class="line">500并发，5s内，启动，无报错</span><br></pre></td></tr></table></figure>  
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
@@ -197,7 +163,7 @@
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/api压测-Jmeter/">api压测,Jmeter</a>
+  <span></span> <a href="/tags/Jmeter-api压力测试-性能调优/">Jmeter,api压力测试,性能调优</a>
   </div>
 
 </div>
@@ -211,17 +177,10 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2017/03/14/浅尝Jmeter（三）-http请求乱码问题/" title="浅尝Jmeter(三)-http请求乱码问题">
-  <span>
-  浅尝Jmeter(三)-http请求乱码问题</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2017/03/14/浅尝Jmeter（一）-环境配置与安装/"  title="浅尝Jmeter（一）环境配置与安装">
- <span>浅尝Jmeter（一）环境配置与安装
+<a href="/2017/03/14/浅尝Jmeter(三)-http请求乱码问题/"  title="浅尝Jmeter(三)-http请求乱码问题">
+ <span>浅尝Jmeter(三)-http请求乱码问题
 </span>
 </a>
 </div>
@@ -289,15 +248,11 @@
 			
 		
 			
+				<li><a href="/tags/FIND-IN-SET-in/" title="FIND_IN_SET(),in()">FIND_IN_SET(),in()<sup>1</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/程序调试、数据类型转换/" title="程序调试、数据类型转换">程序调试、数据类型转换<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/注释、快捷键/" title="注释、快捷键">注释、快捷键<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/selenium-gird-remote-谷歌运行报错-请停用以开发者模式运行的扩展程序/" title="selenium,gird,remote,谷歌运行报错,请停用以开发者模式运行的扩展程序">selenium,gird,remote,谷歌运行报错,请停用以开发者模式运行的扩展程序<sup>1</sup></a></li>
 			
 		
 			
@@ -305,7 +260,15 @@
 			
 		
 			
-				<li><a href="/tags/FIND-IN-SET-in/" title="FIND_IN_SET(),in()">FIND_IN_SET(),in()<sup>1</sup></a></li>
+				<li><a href="/tags/selenium-gird-remote-谷歌运行报错-请停用以开发者模式运行的扩展程序/" title="selenium,gird,remote,谷歌运行报错,请停用以开发者模式运行的扩展程序">selenium,gird,remote,谷歌运行报错,请停用以开发者模式运行的扩展程序<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/注释、快捷键/" title="注释、快捷键">注释、快捷键<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/IBM-Security-跨站点脚本编制（XSS）/" title="IBM Security,跨站点脚本编制（XSS）">IBM Security,跨站点脚本编制（XSS）<sup>1</sup></a></li>
 			
 		
 			
@@ -313,7 +276,7 @@
 			
 		
 			
-				<li><a href="/tags/IBM-Security-跨站点脚本编制（XSS）/" title="IBM Security,跨站点脚本编制（XSS）">IBM Security,跨站点脚本编制（XSS）<sup>1</sup></a></li>
+				<li><a href="/tags/SoapUi-接口测试-安装与使用/" title="SoapUi,接口测试,安装与使用">SoapUi,接口测试,安装与使用<sup>1</sup></a></li>
 			
 		
 			
@@ -329,7 +292,7 @@
 			
 		
 			
-				<li><a href="/tags/SoapUi-接口测试-安装与使用/" title="SoapUi,接口测试,安装与使用">SoapUi,接口测试,安装与使用<sup>1</sup></a></li>
+				<li><a href="/tags/Jmeter-api压力测试-性能调优/" title="Jmeter,api压力测试,性能调优">Jmeter,api压力测试,性能调优<sup>1</sup></a></li>
 			
 		
 		</ul>
