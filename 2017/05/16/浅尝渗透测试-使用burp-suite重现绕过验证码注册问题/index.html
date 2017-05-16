@@ -4,50 +4,55 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>压力测试-SoupUI-Header参数化 | 小梦的博客</title>
+    <title>浅尝渗透测试-使用burp suite重现绕过验证码注册问题 | 小梦的博客</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Amiee Zhou">
     
 
     
-    <meta name="description" content="第一部分：使用Cookie作为登录用户判断
-打开接口，左下角，Header设置Cookie
+    <meta name="description" content="好久没写博客了，又犯懒了，哈哈，前阵子通过统计数据发现验证码有被刷的嫌疑，这几天发现了问题所在。复制cookie信息绕过 验证码 校验的问题
+1主要问题原因：图片验证码参与cookie，注册成功后，session未过期前，验证码未清除，因此，在session过期前，可以绕过验证码进行注册
+第一部分：burp suite安装
 
-第二部分：模拟不同用户登录操作，使Cookie参数化
-1、TestCase-AddStep-添加DataSource：
-
-2、添加你想加入的Cookie数据，这里有很多种方式，可以使用excel表格、从数据库读取（如果做性能测试，不建议使用，读取会影响性能结果）、直接添加数据（不从外界获取数据），在这里我">
+安装前提：java环境：jdk+配置环境变量
+下载破解版burp sui">
 <meta property="og:type" content="article">
-<meta property="og:title" content="压力测试-SoupUI-Header参数化">
-<meta property="og:url" content="http://yoursite.com/2016/11/07/压力测试-Header参数化/index.html">
+<meta property="og:title" content="浅尝渗透测试-使用burp suite重现绕过验证码注册问题">
+<meta property="og:url" content="http://yoursite.com/2017/05/16/浅尝渗透测试-使用burp-suite重现绕过验证码注册问题/index.html">
 <meta property="og:site_name" content="小梦的博客">
-<meta property="og:description" content="第一部分：使用Cookie作为登录用户判断
-打开接口，左下角，Header设置Cookie
+<meta property="og:description" content="好久没写博客了，又犯懒了，哈哈，前阵子通过统计数据发现验证码有被刷的嫌疑，这几天发现了问题所在。复制cookie信息绕过 验证码 校验的问题
+1主要问题原因：图片验证码参与cookie，注册成功后，session未过期前，验证码未清除，因此，在session过期前，可以绕过验证码进行注册
+第一部分：burp suite安装
 
-第二部分：模拟不同用户登录操作，使Cookie参数化
-1、TestCase-AddStep-添加DataSource：
-
-2、添加你想加入的Cookie数据，这里有很多种方式，可以使用excel表格、从数据库读取（如果做性能测试，不建议使用，读取会影响性能结果）、直接添加数据（不从外界获取数据），在这里我">
-<meta property="og:image" content="http://i.imgur.com/32N3MjQ.png">
-<meta property="og:image" content="http://i.imgur.com/l6pGPHG.png">
-<meta property="og:image" content="http://i.imgur.com/EOlj5EV.jpg">
-<meta property="og:image" content="http://i.imgur.com/HFoT2Vh.png">
-<meta property="og:image" content="http://i.imgur.com/YTpWsi0.png">
-<meta property="og:image" content="http://i.imgur.com/qg0oVd2.png">
-<meta property="og:image" content="http://i.imgur.com/UVLx4YY.png">
-<meta property="og:image" content="http://i.imgur.com/1DZBAlb.png">
-<meta property="og:updated_time" content="2016-11-08T06:35:29.000Z">
+安装前提：java环境：jdk+配置环境变量
+下载破解版burp sui">
+<meta property="og:image" content="http://i.imgur.com/ft9osKS.png">
+<meta property="og:image" content="http://i.imgur.com/Jfj62lY.png">
+<meta property="og:image" content="http://i.imgur.com/C7NsFF1.jpg">
+<meta property="og:image" content="http://i.imgur.com/BIp3qzb.jpg">
+<meta property="og:image" content="http://i.imgur.com/MbcRzBO.png">
+<meta property="og:image" content="http://i.imgur.com/vZt86zQ.png">
+<meta property="og:image" content="http://i.imgur.com/UtVTbOG.jpg">
+<meta property="og:image" content="http://i.imgur.com/za8OLaQ.jpg">
+<meta property="og:image" content="http://i.imgur.com/vn47ZvV.jpg">
+<meta property="og:image" content="http://i.imgur.com/n9a4wCd.jpg">
+<meta property="og:image" content="http://i.imgur.com/W9FsVAY.jpg">
+<meta property="og:image" content="http://i.imgur.com/7azybAC.png">
+<meta property="og:image" content="http://i.imgur.com/C0U0Om5.png">
+<meta property="og:image" content="http://i.imgur.com/Uv5AEFf.png">
+<meta property="og:image" content="http://i.imgur.com/eR3a3ES.png">
+<meta property="og:image" content="http://i.imgur.com/KLMvHiH.jpg">
+<meta property="og:updated_time" content="2017-05-16T13:11:22.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="压力测试-SoupUI-Header参数化">
-<meta name="twitter:description" content="第一部分：使用Cookie作为登录用户判断
-打开接口，左下角，Header设置Cookie
+<meta name="twitter:title" content="浅尝渗透测试-使用burp suite重现绕过验证码注册问题">
+<meta name="twitter:description" content="好久没写博客了，又犯懒了，哈哈，前阵子通过统计数据发现验证码有被刷的嫌疑，这几天发现了问题所在。复制cookie信息绕过 验证码 校验的问题
+1主要问题原因：图片验证码参与cookie，注册成功后，session未过期前，验证码未清除，因此，在session过期前，可以绕过验证码进行注册
+第一部分：burp suite安装
 
-第二部分：模拟不同用户登录操作，使Cookie参数化
-1、TestCase-AddStep-添加DataSource：
-
-2、添加你想加入的Cookie数据，这里有很多种方式，可以使用excel表格、从数据库读取（如果做性能测试，不建议使用，读取会影响性能结果）、直接添加数据（不从外界获取数据），在这里我">
-<meta name="twitter:image" content="http://i.imgur.com/32N3MjQ.png">
+安装前提：java环境：jdk+配置环境变量
+下载破解版burp sui">
+<meta name="twitter:image" content="http://i.imgur.com/ft9osKS.png">
 
     
     <link rel="alternative" href="atom.xml" title="小梦的博客" type="application/atom+xml">
@@ -107,14 +112,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2016/11/07/压力测试-Header参数化/" title="压力测试-SoupUI-Header参数化" itemprop="url">压力测试-SoupUI-Header参数化</a>
+      <a href="/2017/05/16/浅尝渗透测试-使用burp-suite重现绕过验证码注册问题/" title="浅尝渗透测试-使用burp suite重现绕过验证码注册问题" itemprop="url">浅尝渗透测试-使用burp suite重现绕过验证码注册问题</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="Amiee Zhou" target="_blank" itemprop="author">Amiee Zhou</a>
 		
   <p class="article-time">
-    <time datetime="2016-11-07T13:10:40.000Z" itemprop="datePublished"> 发表于 2016-11-07</time>
+    <time datetime="2017-05-16T09:17:17.000Z" itemprop="datePublished"> 发表于 2017-05-16</time>
     
   </p>
 </header>
@@ -127,25 +132,72 @@
 		
 		</div>
 		
-		<p><strong>第一部分：使用Cookie作为登录用户判断</strong></p>
-<p>打开接口，左下角，Header设置Cookie</p>
-<p><img src="http://i.imgur.com/32N3MjQ.png" alt=""></p>
-<p><strong>第二部分：模拟不同用户登录操作，使Cookie参数化</strong></p>
-<p>1、TestCase-AddStep-添加DataSource：</p>
-<p><img src="http://i.imgur.com/l6pGPHG.png" alt=""></p>
-<p>2、添加你想加入的Cookie数据，这里有很多种方式，可以使用excel表格、从数据库读取（如果做性能测试，不建议使用，读取会影响性能结果）、直接添加数据（不从外界获取数据），在这里我们使用直接添加数据：右侧DataSource-选择Grid，左侧添加参数与数值：</p>
-<p><img src="http://i.imgur.com/EOlj5EV.jpg" alt=""></p>
-<p><strong>第三部分：Header参数化</strong><br>1、在Request中输入参数（取DataSource中数据），注意，这里需要自己手动输入(${DataSource#Cookie})，不可进行填写：</p>
-<p><img src="http://i.imgur.com/HFoT2Vh.png" alt=""></p>
-<p>2、最后添加循环，使Cookie循环取DataSource中数据-TestCase-AddStep-添加DataSource Loop：</p>
-<p><img src="http://i.imgur.com/YTpWsi0.png" alt=""></p>
-<p>3、设置DataSource Loop：</p>
-<p><img src="http://i.imgur.com/qg0oVd2.png" alt=""></p>
-<p>4、双击TestCase，点击左上角运行：</p>
-<p><img src="http://i.imgur.com/UVLx4YY.png" alt=""></p>
-<p>5、查看运行结果，可以清晰的看到循环取数据，运行接口的步骤：</p>
-<p><img src="http://i.imgur.com/1DZBAlb.png" alt=""></p>
-<p>6、此时就可以使用LoadTest进行压力测试了。</p>
+		<p>好久没写博客了，又犯懒了，哈哈，前阵子通过统计数据发现验证码有被刷的嫌疑，这几天发现了问题所在。复制cookie信息绕过 验证码 校验的问题</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">主要问题原因：图片验证码参与cookie，注册成功后，session未过期前，验证码未清除，因此，在session过期前，可以绕过验证码进行注册</span><br></pre></td></tr></table></figure>
+<p><strong>第一部分：burp suite安装</strong></p>
+<ol>
+<li>安装前提：java环境：jdk+配置环境变量</li>
+<li>下载破解版burp suite，并解压后得到两个jar包，放在c盘根目录下，如下图：</li>
+</ol>
+<p><img src="http://i.imgur.com/ft9osKS.png" alt=""></p>
+<ol>
+<li>在c盘根目录下，执行java命令打开软件_注意安装java环境，如下图</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd /</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -jar burpsuite-1.4.07.jar</span><br></pre></td></tr></table></figure>
+<p><img src="http://i.imgur.com/Jfj62lY.png" alt="执行java命令打开软件_注意安装java环境"></p>
+<ol>
+<li>进入burp suite主界面，如图：</li>
+</ol>
+<p><img src="http://i.imgur.com/C7NsFF1.jpg" alt=""></p>
+<p><strong>第二部分：设置浏览器代理</strong></p>
+<ol>
+<li>查看burp suite代理端口,proxy-options，这里钩钩表示可以使用，如果端口被占用，需要更换未被占用端口（以80开头）</li>
+</ol>
+<p><img src="http://i.imgur.com/BIp3qzb.jpg" alt=""></p>
+<ol>
+<li>浏览器设置代理（IE或谷歌或火狐都可以），这里介绍IE设置代理方法，注意浏览器代理与burp suite代理需保持一致：</li>
+</ol>
+<p><img src="http://i.imgur.com/MbcRzBO.png" alt=""></p>
+<p><img src="http://i.imgur.com/vZt86zQ.png" alt=""></p>
+<p><strong>第三部分：抓包</strong></p>
+<ol>
+<li>在浏览器上进入需要抓包页面，输入信息（注意：此时最好把抓包开关关闭）：</li>
+</ol>
+<p><img src="http://i.imgur.com/UtVTbOG.jpg" alt=""></p>
+<ol>
+<li>proxy-intercept打开抓包开关（intercept is on），点击注册按钮，抓请求与cookie：</li>
+</ol>
+<p><img src="http://i.imgur.com/za8OLaQ.jpg" alt="打开抓包开关-intercept is on"></p>
+<p><img src="http://i.imgur.com/vn47ZvV.jpg" alt="抓到请求与cookie"></p>
+<ol>
+<li>此时要注意一个问题，如果抓到的请求不是你想要的请求，点击proxy-intercept-forward，抓下一个请求：   </li>
+</ol>
+<p><img src="http://i.imgur.com/n9a4wCd.jpg" alt=""></p>
+<ol>
+<li>抓到想要的请求时，点击action-send to repeater,将这个请求提取出来，包括当前的cookie</li>
+</ol>
+<p><img src="http://i.imgur.com/W9FsVAY.jpg" alt="将需要的请求提取出来"></p>
+<ol>
+<li>回到抓包位置，关闭抓包开关，使注册成功，session生效,此时前一个验证码参与的session已经生效:</li>
+</ol>
+<p><img src="http://i.imgur.com/7azybAC.png" alt="回到抓包位置关掉抓包开关使session登录成功"></p>
+<ol>
+<li>在前一个验证码参与的session未过期前，换个用户名，使用前一个验证码得到的其他信息（例如：cookie），发送注册请求，提示注册成功，成功绕过验证码：</li>
+</ol>
+<p><img src="http://i.imgur.com/C0U0Om5.png" alt="在session未过期前换个用户名发请求，这个图仅表示这个用户名未被占用"></p>
+<p><img src="http://i.imgur.com/Uv5AEFf.png" alt="提示注册成功，成功绕过验证码"></p>
+<ol>
+<li>最后去页面上，验证一下，该用户绕过验证码，确实注册成功<br><img src="http://i.imgur.com/eR3a3ES.png" alt="提示注册成功，成功绕过验证码"></li>
+</ol>
+<p><strong>第四部分：解决方案</strong></p>
+<ol>
+<li>验证码每次用过后，将cookie里的验证码信息清除；</li>
+<li>验证码不参与cookie信息。</li>
+</ol>
+<p><strong>第五部分：修复后结果</strong></p>
+<p>修复后，再次使用同样步骤，提示“验证码输入错误”</p>
+<p><img src="http://i.imgur.com/KLMvHiH.jpg" alt="修复后结果"></p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -154,7 +206,7 @@
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/压力测试，SoupUI-Header参数化-登录Cookie参数化/">压力测试，SoupUI,Header参数化,登录Cookie参数化</a>
+  <span></span> <a href="/tags/安全测试-burp-suite/">安全测试,burp suite</a>
   </div>
 
 </div>
@@ -168,17 +220,10 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2016/12/29/selenium-Grid-Remote实例/" title="Selenium+Grid Remote实例与谷歌运行报错分析">
-  <span>
-  Selenium+Grid Remote实例与谷歌运行报错分析</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2016/11/07/性能测试-使用SoupUI进行压测/"  title="性能测试-使用SoupUI进行压测">
- <span>性能测试-使用SoupUI进行压测
+<a href="/2017/03/15/浅尝Jmeter(四)-性能调优/"  title="浅尝Jmeter(四)-性能调优">
+ <span>浅尝Jmeter(四)-性能调优
 </span>
 </a>
 </div>
